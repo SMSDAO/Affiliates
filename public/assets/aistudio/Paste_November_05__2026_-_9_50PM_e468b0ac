@@ -1,0 +1,1271 @@
+SUPER AFFILIATE MANAGER AI ENTERPRISE
+
+V1.2.0 — ULTIMATE AFFILIATE COMMERCE & GROWTH ENGINE
+
+RELEASE: V1.2.0
+CLASSIFICATION: ENTERPRISE ELITE / PRODUCTION IMPLEMENTATION
+ARCHITECTURE: SINGLE SOURCE OF TRUTH (SSOT)
+IMPLEMENTATION MODE: EXTEND EXISTING APPLICATION — DO NOT REBUILD
+PRIORITY: REAL INTEGRATIONS, REAL TRACKING, VERIFIED COMMISSIONS, SECURE PAYOUTS
+
+⸻
+
+1. PRIMARY MISSION
+
+Upgrade the existing Super Affiliate Manager AI Enterprise application into a complete affiliate commerce, referral, multi-level commission, e-commerce, product-discovery, and gaming affiliate management platform.
+
+The system must support three connected business models:
+
+1. Merchant Affiliate Program: Businesses recruit affiliates to promote their own products and services.
+2. Affiliate Network Marketplace: Users discover external affiliate networks, merchants, products, and promotional opportunities.
+3. AI Affiliate Marketing Workspace: AI helps users discover products, create campaigns, generate promotional content, distribute approved campaigns, and measure results.
+
+The application must provide an understandable experience for beginners while supporting advanced enterprise commission rules, affiliate management, multiple stores, global affiliates, and large campaigns.
+
+NON-NEGOTIABLE: Preserve all working V1.1.0 functionality. Do not replace existing authentication, subscription billing, tenant isolation, AI orchestration, provider integrations, tracking infrastructure, or database architecture without an evidenced technical requirement.
+
+Inspect the existing repository and create an implementation inventory before changing files.
+
+2. ENTERPRISE AFFILIATE ENGINE
+
+Implement a complete affiliate management engine.
+
+Affiliate registration and approval
+
+* Public affiliate registration page.
+* Customer-to-affiliate account upgrade.
+* Manual and configurable automatic approval.
+* Email verification.
+* Affiliate terms and agreement acceptance.
+* Affiliate profile and promotional website information.
+* Traffic-source declaration.
+* Country, currency, and tax information where required.
+* Affiliate status: pending, approved, rejected, suspended, terminated.
+* Individual commission agreements.
+* Affiliate invitation and referral recruitment.
+* Bulk import and export.
+* Unlimited affiliate accounts subject to infrastructure capacity, abuse prevention, and configured service limits.
+
+Affiliate portal
+
+Every approved affiliate receives a dedicated portal.
+
+Include:
+
+* Overview dashboard.
+* Unique affiliate referral URL.
+* Unique QR code.
+* Short-link manager.
+* Campaign links.
+* Product links.
+* Coupon codes.
+* Promotional banners and creative assets.
+* Click and visitor statistics.
+* Leads and signups.
+* Confirmed orders.
+* Pending commissions.
+* Approved commissions.
+* Rejected commissions.
+* Paid commissions.
+* Recurring commissions.
+* Sub-affiliate performance.
+* Rank and achievements.
+* Payout requests.
+* Payment history.
+* Tax and account settings.
+* Notifications.
+* Support tickets and documentation.
+
+Use clear language, visible statuses, and mobile-friendly charts.
+
+3. AUTOMATED REFERRAL TRACKING
+
+Build a reliable referral attribution system.
+
+Support:
+
+* Affiliate referral URLs.
+* Shortened URLs.
+* QR code referrals.
+* Coupon-based attribution.
+* Product-specific referral URLs.
+* Campaign identifiers.
+* Landing-page attribution.
+* First-click and last-click attribution policies.
+* Configurable attribution windows.
+* Cross-session attribution where legally permitted.
+* Subscription and recurring-order attribution.
+* Multi-store attribution.
+* Server-to-server conversion postbacks.
+* Webhook conversion events.
+* Approved external network tracking.
+
+Tracking sequence
+
+1. Customer clicks affiliate URL or scans QR code.
+2. Tracking endpoint validates the referral.
+3. System records the click and campaign attribution.
+4. Consent and applicable privacy rules are checked.
+5. First-party attribution is recorded where permitted.
+6. Customer visits the store.
+7. Customer completes an eligible purchase or subscription.
+8. Store integration sends a verified conversion event.
+9. Commission engine evaluates attribution and commission rules.
+10. Commission is created as pending.
+11. Order status, payment, cancellation, refund, and chargeback conditions are checked.
+12. Eligible commission becomes approved.
+13. Payout system processes the approved balance.
+14. Payment provider response is recorded.
+15. Payout is independently verified and shown in the affiliate portal.
+
+Never create a paid commission simply because a click or browser redirect occurred.
+
+Attribution protection
+
+Implement:
+
+* Idempotency keys.
+* Duplicate conversion protection.
+* Signed webhooks.
+* Timestamp validation.
+* Event replay protection.
+* Bot and click-spam detection.
+* Referral manipulation detection.
+* Cookie-consent enforcement.
+* Privacy-compliant first-party tracking.
+* Audit trails.
+* Attribution conflict resolution.
+* Configurable attribution priority.
+
+4. MULTI-LEVEL MARKETING (MLM) COMMISSION ENGINE
+
+Implement configurable multi-level affiliate commissions.
+
+Example:
+
+* Level 1: Direct affiliate earns 20%.
+* Level 2: Parent affiliate earns 5%.
+* Level 3: Second-level parent earns 2%.
+* Level 4: Optional 1% where enabled and legally approved.
+
+These are example values only. Administrators must configure the actual percentages, eligible products, commissionable revenue, and maximum depth.
+
+Required capabilities
+
+* Configurable MLM depth.
+* Direct referral commissions.
+* Sub-affiliate commissions.
+* Parent-affiliate bonuses.
+* Recruitment attribution.
+* Two-way commission reporting.
+* Rank-based commission multipliers.
+* Per-product and per-category MLM rules.
+* Commission caps.
+* Maximum payout limits.
+* Per-country and per-program rules.
+* Effective dates and versioned commission policies.
+* Commission simulation before activation.
+
+Important compliance restrictions
+
+Build a sales-based compensation model, not a pay-to-recruit pyramid scheme.
+
+* Do not pay rewards merely for recruiting someone or purchasing an entry package.
+* Recruitment bonuses must be tied to legitimate, verified, eligible commercial activity.
+* No commissions on fictitious transactions, self-referrals, or artificial volume.
+* Provide administrator controls to disable MLM by jurisdiction or program.
+* Require legal and compliance approval before enabling an MLM compensation plan.
+* Display the complete compensation structure to affiliates before acceptance.
+
+5. RANKS, ACHIEVEMENTS & PERFORMANCE BONUSES
+
+Build a configurable affiliate ranking system.
+
+Example ranks:
+
+Rank	Example qualification
+Bronze	Approved affiliate
+Silver	10 verified sales
+Gold	50 verified sales
+Platinum	150 verified sales
+Diamond	500 verified sales
+
+Qualification rules must be configurable.
+
+Support:
+
+* Sales-volume thresholds.
+* Verified revenue thresholds.
+* Active customer counts.
+* Retention requirements.
+* Compliance standing.
+* Optional team-performance criteria.
+* Rank-specific commission rates.
+* Rank bonuses.
+* Monthly and lifetime achievements.
+* Automatic promotion.
+* Demotion rules.
+* Manual administrator override.
+* Rank history and audit logs.
+
+Do not award ranks using unverified clicks, fake signups, or unpaid orders.
+
+6. LIFETIME AND RECURRING COMMISSIONS
+
+Implement customer lifetime attribution.
+
+Features:
+
+* Customer-to-affiliate attribution.
+* Repeat-purchase commissions.
+* Subscription commissions.
+* Renewal commissions.
+* Recurring commission periods.
+* Configurable commission expiration.
+* Lifetime commission option.
+* Product-specific lifetime rules.
+* Subscription cancellation handling.
+* Failed payment handling.
+* Refund and chargeback reversals.
+* Customer reassignment restrictions.
+* Attribution dispute management.
+
+A lifetime commission must never mean an unconditional or guaranteed payment. Commissions remain subject to eligible paid transactions, the program agreement, refunds, and applicable laws.
+
+7. FLEXIBLE COMMISSION RULE BUILDER
+
+Create an administrator-friendly commission configuration interface.
+
+Support:
+
+* Percentage commissions.
+* Flat-rate commissions.
+* Product-specific rates.
+* Category-specific rates.
+* Store-specific rates.
+* Affiliate-specific rates.
+* Campaign-specific rates.
+* Subscription-specific rates.
+* New-customer bonuses.
+* Signup bonuses where legally permitted.
+* Milestone bonuses.
+* Limited-time promotions.
+* Rank-based bonuses.
+* MLM level commissions.
+* Commission exclusions.
+* Maximum commission limits.
+* Currency-specific policies.
+
+Rule priority
+
+Define deterministic rule precedence:
+
+1. Explicit affiliate-specific override.
+2. Product-specific rule.
+3. Category-specific rule.
+4. Campaign-specific rule.
+5. Store-specific rule.
+6. Rank-specific default.
+7. Program default.
+
+Resolve conflicts explicitly. Record which rule produced each commission and preserve the rule version used.
+
+Provide a commission calculator and preview before saving.
+
+8. E-COMMERCE INTEGRATION HUB
+
+Create a modular integration architecture with independently configurable adapters.
+
+Priority integrations
+
+E-commerce
+
+* WooCommerce.
+* WooCommerce Subscriptions.
+* Easy Digital Downloads.
+* WP eCommerce.
+* JigoShop.
+* WP eStore.
+* Simple Shopping Cart.
+* Botble e-commerce.
+
+Forms and lead generation
+
+* Contact Form 7.
+* Gravity Forms.
+* WPForms.
+
+Payments and payouts
+
+* PayPal Payouts.
+* Stripe Connect.
+* Paystack Payouts.
+
+Subscription and membership systems
+
+* Supported WooCommerce subscription integrations.
+* Supported membership and recurring billing providers.
+* Internal subscription service.
+
+Integration requirements
+
+Each adapter must support, where the provider permits:
+
+* Connection and authentication.
+* Store identification.
+* Product retrieval.
+* Order retrieval.
+* Customer attribution.
+* Subscription events.
+* Payment events.
+* Refund events.
+* Cancellation events.
+* Webhooks.
+* Retry handling.
+* Idempotency.
+* Read-back verification.
+* Integration health status.
+
+Do not claim that an integration is complete because a settings form exists.
+
+Each integration must have a verified capability status:
+
+* Available.
+* Connected.
+* Operational.
+* Partially supported.
+* Requires credentials.
+* Requires merchant approval.
+* Unsupported.
+* Failed.
+
+Where an external product requires a WordPress plugin, provide an actual plugin or compatible integration package rather than claiming a web application can automatically install a plugin into an unrelated WordPress installation.
+
+9. WORDPRESS SHORTCODE & EMBEDDABLE AFFILIATE PORTAL
+
+Provide a WordPress integration package.
+
+Example shortcodes:
+
+[affiliate_register]
+
+[affiliate_login]
+
+[affiliate_dashboard]
+
+[affiliate_referral_links]
+
+[affiliate_qr_code]
+
+[affiliate_statistics]
+
+[affiliate_payouts]
+
+[affiliate_leaderboard]
+
+Requirements:
+
+* Real shortcode registration.
+* Secure API authentication.
+* User authorization.
+* CSRF protection.
+* Nonce validation.
+* Responsive rendering.
+* Accessible forms.
+* Error handling.
+* Localization.
+* Compatibility checks.
+* Plugin installation documentation.
+* Versioned plugin releases.
+
+Shortcodes must render actual application data. Do not create decorative demo-only components.
+
+For non-WordPress websites, provide secure embed components or API-based integration where appropriate.
+
+10. GLOBAL PRODUCT DISCOVERY & DIRECT PRODUCT IMPORT
+
+Create a product discovery engine that can retrieve publicly accessible product information from supported merchant pages.
+
+Initial merchant targets:
+
+* Alibaba.
+* Best Buy.
+* bol.com.
+* Booking.com.
+* Coolblue.
+* eBay.
+* Flipkart.
+* Gearbest.
+* Jumia.
+* Mercado Livre.
+* Newegg.
+* Target.
+* Adayroi, subject to current availability and compatibility.
+* CJ affiliate merchants.
+* Additional approved merchants and affiliate networks.
+
+Do not assume every merchant currently operates, provides public product access, or offers an affiliate program.
+
+Direct product retrieval
+
+Where legally and technically permitted:
+
+* Accept a merchant product URL.
+* Retrieve public product information.
+* Parse product name.
+* Extract product images.
+* Extract price and currency.
+* Extract availability.
+* Extract description.
+* Extract category.
+* Identify merchant.
+* Identify product URL.
+* Detect existing affiliate parameters.
+* Generate an affiliate-enabled URL when a valid merchant or network identifier exists.
+
+Support:
+
+* Custom merchant parsers.
+* Reusable parser templates.
+* Parser versioning.
+* Scheduled product updates.
+* Price-change detection.
+* Availability-change detection.
+* Broken-link detection.
+* Product image handling.
+* Product import by URL.
+* Bulk import using supported category and search URLs.
+* Product collections.
+* Deal pages.
+* Local merchant storefronts.
+* Product comparison pages.
+
+Responsible retrieval
+
+Respect merchant terms, robots directives, rate limits, copyright, and access restrictions.
+
+Do not bypass CAPTCHAs, authentication, paywalls, anti-bot systems, or technical restrictions.
+
+Use official APIs and approved affiliate feeds when available. If a merchant blocks automated retrieval, clearly display that manual import or an authorized feed is required.
+
+Never fabricate product prices, inventory, discounts, or affiliate commission rates.
+
+11. AFFILIATE NETWORK MARKETPLACE
+
+Build a directory and onboarding marketplace for external affiliate programs.
+
+Priority network discovery:
+
+* CJ Affiliate.
+* Impact.
+* Awin.
+* Rakuten Advertising.
+* PartnerStack.
+* ClickBank.
+* FlexOffers.
+* Amazon Associates.
+* eBay Partner Network.
+* ShareASale, subject to current platform availability.
+* Additional approved regional and specialist networks.
+
+Network directory
+
+Each network profile includes:
+
+* Network name.
+* Official website.
+* Supported countries.
+* Merchant categories.
+* Application link.
+* Registration requirements.
+* Approval requirements.
+* API availability.
+* Deep-link support.
+* Tracking methods.
+* Commission information where verified.
+* Integration status.
+* Last verification date.
+
+Connection workflow
+
+1. User selects a network.
+2. User opens the official registration page.
+3. User completes the external application.
+4. User obtains required approval and credentials.
+5. User connects credentials or imports affiliate identifiers.
+6. System validates the connection where supported.
+7. User discovers approved products and campaigns.
+8. User creates affiliate links.
+9. Tracking and reporting begin through supported methods.
+
+Never claim that users are automatically approved by an independent network.
+
+Never claim a normal merchant link generates affiliate commission unless a valid affiliate relationship and tracking mechanism exist.
+
+12. CASINO, GAMING & SPORTSBOOK AFFILIATE MODULE
+
+Create a separate specialized affiliate vertical.
+
+Support legitimate, licensed casino and gaming affiliate programs.
+
+Capabilities:
+
+* Casino affiliate directory.
+* Game and operator discovery.
+* Approved operator landing pages.
+* Affiliate link management.
+* Casino-specific campaign pages.
+* Promotional banners.
+* Game category pages.
+* Affiliate performance analytics.
+* Revenue-share tracking where provided by the operator.
+* CPA and hybrid commission models.
+* Approved conversion postbacks.
+* Operator reporting reconciliation.
+* Campaign compliance checks.
+* Country and jurisdiction restrictions.
+* Age-gating.
+* Responsible-gambling disclosures.
+* Affiliate marketing disclosures.
+
+Mandatory safeguards
+
+* Do not promote unlicensed gambling operators in restricted jurisdictions.
+* Do not target minors.
+* Do not create misleading guaranteed-win claims.
+* Do not generate deceptive bonuses or fabricated promotional terms.
+* Do not automatically publish casino advertising to platforms that prohibit it.
+* Require campaign approval before publishing.
+* Maintain geographic and platform restrictions.
+* Provide exclusion lists and emergency campaign suspension.
+* Keep casino content separate from general product campaigns.
+
+13. AI CAMPAIGN & CONTENT FACTORY
+
+Extend the existing AI agent system instead of building a duplicate AI engine.
+
+Create or extend specialized agents:
+
+* Affiliate Strategy Agent.
+* Product Discovery Agent.
+* Merchant Research Agent.
+* Affiliate Link Agent.
+* Commission Optimization Agent.
+* SEO Agent.
+* Local SEO Agent.
+* Social Content Agent.
+* TikTok Content Agent.
+* YouTube Content Agent.
+* Instagram Content Agent.
+* Facebook Content Agent.
+* Pinterest Content Agent.
+* Blog Publishing Agent.
+* Deal Page Agent.
+* Email Marketing Agent.
+* Campaign Analytics Agent.
+* Fraud Detection Agent.
+* Compliance Agent.
+* Casino Compliance Agent.
+* Revenue Optimization Agent.
+
+User workflow
+
+The user can enter one simple request:
+
+“Find profitable products in home electronics and create a campaign for my approved affiliate links.”
+
+The AI should:
+
+1. Understand the business goal.
+2. Identify the user’s connected affiliate networks.
+3. Search eligible merchants and products.
+4. Verify available product and commission information.
+5. Select approved products.
+6. Generate campaign strategy.
+7. Create landing pages.
+8. Generate social content.
+9. Create platform-specific creative.
+10. Insert verified affiliate links.
+11. Check advertising and disclosure requirements.
+12. Request approval where required.
+13. Publish through authorized integrations.
+14. Track clicks and conversions.
+15. Analyze results.
+16. Recommend improvements.
+
+The AI must not claim to have published content, connected an account, or generated commissions without actual execution evidence.
+
+External AI distribution limitation
+
+The application cannot force independent AI products such as ChatGPT, Gemini, Claude, or DeepSeek to recommend or insert a user’s affiliate links into their independent answers.
+
+It can optimize its own AI agents, websites, content, authorized integrations, product feeds, and discoverability through permitted channels.
+
+14. AUTOMATED CONTENT DISTRIBUTION
+
+Provide a publishing workspace for:
+
+* TikTok.
+* YouTube.
+* Instagram.
+* Facebook.
+* Pinterest.
+* X.
+* LinkedIn.
+* Blogs.
+* Supported CMS platforms.
+* Email campaigns.
+
+Features:
+
+* Content calendar.
+* Campaign scheduler.
+* Platform-specific formatting.
+* Hashtag suggestions.
+* SEO metadata.
+* Tracking URL insertion.
+* QR generation.
+* Affiliate disclosure insertion.
+* Draft and approval workflows.
+* Publishing logs.
+* Retry and failure handling.
+* Analytics import.
+
+Only publish using official APIs or explicitly authorized integrations.
+
+When an API does not permit a publishing action, provide a prepared export or manual publishing workflow and label it accurately.
+
+15. PAYOUTS & WITHDRAWAL MANAGEMENT
+
+Build a secure payout center.
+
+Provider adapters:
+
+* PayPal Payouts.
+* Stripe Connect.
+* Paystack Payouts.
+* Approved manual bank transfer.
+* Exportable payout CSV.
+
+Payout workflow
+
+1. Affiliate requests withdrawal or meets automatic payout threshold.
+2. System checks available approved balance.
+3. Identity, tax, compliance, and payment requirements are checked.
+4. Administrator approval is applied where configured.
+5. Payout request is locked against duplicate processing.
+6. Provider payout request is sent.
+7. Provider response and transaction identifier are stored.
+8. Payout status is checked independently.
+9. Successful payment is reconciled.
+10. Affiliate dashboard is updated.
+11. Audit log and notification are generated.
+
+Payout statuses:
+
+* Requested.
+* Pending review.
+* Approved.
+* Processing.
+* Paid.
+* Failed.
+* Rejected.
+* Reversed.
+* Requires action.
+
+Requirements:
+
+* Minimum payout threshold.
+* Payout schedule.
+* Currency support.
+* Provider fees.
+* Payout limits.
+* Payment-method eligibility.
+* Failed payout recovery.
+* Duplicate-payment protection.
+* Reconciliation reports.
+* Administrator approval.
+* Complete audit history.
+
+Do not store raw payment credentials or card data unnecessarily. Use provider-hosted onboarding and tokenized credentials.
+
+16. FRAUD DETECTION & AFFILIATE CONTROL
+
+Build fraud prevention into the commission lifecycle.
+
+Detect and flag:
+
+* Click flooding.
+* Automated bot traffic.
+* Self-referrals.
+* Duplicate accounts.
+* Suspicious device patterns.
+* Coupon abuse.
+* Fake conversions.
+* Duplicate webhook events.
+* Unusual conversion spikes.
+* Referral manipulation.
+* Chargebacks.
+* Refund abuse.
+* Suspicious sub-affiliate networks.
+
+Include:
+
+* Risk score.
+* Reason codes.
+* Evidence records.
+* Manual review queue.
+* Affiliate suspension.
+* Commission hold.
+* Commission reversal.
+* Appeal workflow.
+* False-positive review.
+* Administrator override with audit log.
+
+AI risk scoring must assist human review, not silently confiscate legitimate affiliate earnings.
+
+17. AFFILIATE REPORTING & ANALYTICS
+
+Provide separate merchant, affiliate, and enterprise analytics.
+
+Merchant dashboard
+
+* Total affiliates.
+* Pending applications.
+* Active affiliates.
+* Total clicks.
+* Unique visitors.
+* Signups.
+* Orders.
+* Conversion rate.
+* Gross sales.
+* Refunds.
+* Commission liability.
+* Approved commissions.
+* Paid commissions.
+* Outstanding payouts.
+* Revenue by campaign.
+* Revenue by merchant.
+* Top products.
+* Top affiliates.
+* Fraud alerts.
+
+Affiliate dashboard
+
+* Personal clicks.
+* QR scans.
+* Leads.
+* Orders.
+* Conversion rate.
+* Pending earnings.
+* Approved earnings.
+* Paid earnings.
+* Recurring earnings.
+* Rank progress.
+* Sub-affiliate results.
+* Best campaigns.
+* Best-performing products.
+
+Enterprise reporting
+
+* Tenant-level isolation.
+* Multiple stores.
+* Multiple affiliate programs.
+* Multi-currency reporting.
+* Date filtering.
+* Export CSV.
+* Scheduled reports.
+* API reporting.
+* Commission reconciliation.
+
+All financial reports must distinguish estimated, pending, approved, paid, refunded, and reversed values.
+
+18. MULTILINGUAL & GLOBAL SUPPORT
+
+Implement translation-ready architecture.
+
+Initial language targets:
+
+* English.
+* French.
+* Arabic.
+* Vietnamese.
+* Spanish.
+* Portuguese.
+* German.
+* Dutch.
+* Filipino.
+
+Support:
+
+* Translation catalogs.
+* Administrator-managed translations.
+* Locale selection.
+* Currency formatting.
+* Time zones.
+* Date formatting.
+* Right-to-left layouts.
+* Localized emails.
+* Localized onboarding.
+* Localized affiliate portal.
+
+Use actual translated strings where supplied. Do not claim complete translation coverage when untranslated strings remain.
+
+19. MARKETING MATERIALS & AUTOMATION
+
+Provide a complete affiliate promotional toolkit.
+
+* Banner library.
+* Product images.
+* Promotional landing pages.
+* Short links.
+* QR codes.
+* Coupons.
+* Email templates.
+* Social post templates.
+* Video script templates.
+* Product descriptions.
+* Deal cards.
+* Local merchant pages.
+* Affiliate resource library.
+* Downloadable campaign assets.
+
+Add optional automation:
+
+* New product discovery.
+* Price updates.
+* Broken-link alerts.
+* Campaign performance summaries.
+* Affiliate milestone notifications.
+* Payout reminders.
+* Inactive affiliate alerts.
+* Suspicious activity alerts.
+
+All scheduled tasks must be configurable, visible, auditable, and stoppable.
+
+20. SIMPLIFIED USER EXPERIENCE
+
+Do not make the application feel like a complicated administrator plugin.
+
+Create three primary experiences:
+
+A. Beginner Workspace
+
+* Start your affiliate business.
+* Find products.
+* Connect affiliate networks.
+* Create your first link.
+* Generate a QR code.
+* Create a campaign.
+* View earnings.
+
+B. Affiliate Workspace
+
+* My links.
+* My products.
+* My campaigns.
+* My referrals.
+* My commissions.
+* My team.
+* My rank.
+* My payouts.
+
+C. Merchant / Enterprise Workspace
+
+* Affiliate program.
+* Applications.
+* Commission rules.
+* MLM configuration.
+* Products and stores.
+* Campaigns.
+* Fraud and compliance.
+* Payout management.
+* Analytics.
+* Integrations.
+* API and developer tools.
+
+Main navigation
+
+* Home.
+* Discover.
+* Affiliate Links.
+* Campaigns.
+* AI Marketing.
+* Affiliates.
+* MLM & Ranks.
+* Commissions.
+* Payouts.
+* Analytics.
+* Integrations.
+* Help Center.
+
+Show advanced features only when the user’s role, subscription, and permissions allow them.
+
+21. DATABASE & API IMPLEMENTATION
+
+Extend the existing database using migrations.
+
+Inspect existing tables before creating anything. Reuse compatible existing entities.
+
+Required logical data domains:
+
+* affiliate_programs
+* affiliate_profiles
+* affiliate_applications
+* affiliate_relationships
+* affiliate_links
+* affiliate_qr_codes
+* affiliate_clicks
+* referral_attributions
+* affiliate_conversions
+* affiliate_commission_rules
+* affiliate_commissions
+* affiliate_commission_adjustments
+* affiliate_ranks
+* affiliate_rank_history
+* affiliate_bonuses
+* affiliate_coupons
+* affiliate_payout_accounts
+* affiliate_payout_requests
+* affiliate_payout_transactions
+* affiliate_networks
+* affiliate_network_connections
+* merchant_integrations
+* merchant_products
+* merchant_product_prices
+* ecommerce_orders
+* ecommerce_subscriptions
+* affiliate_campaigns
+* campaign_assets
+* affiliate_tracking_events
+* fraud_alerts
+* compliance_reviews
+* integration_webhooks
+* affiliate_notifications
+* affiliate_audit_logs
+
+These are logical domains, not an instruction to duplicate tables already present.
+
+API areas
+
+* Affiliate registration and profile.
+* Affiliate approval.
+* Referral tracking.
+* QR tracking.
+* Link generation.
+* Product discovery.
+* Merchant connections.
+* Commission rules.
+* MLM relationships.
+* Rank calculations.
+* Conversion ingestion.
+* Commission approval.
+* Payout requests.
+* Payout processing.
+* Reporting.
+* Fraud review.
+* Campaign creation.
+* Content publishing.
+* Localization.
+
+Provide documented request/response schemas, authorization requirements, tenant scoping, pagination, validation, idempotency, and error handling.
+
+22. SECURITY & COMPLIANCE
+
+Implement:
+
+* Authentication and RBAC.
+* Tenant isolation.
+* Affiliate ownership checks.
+* Secure credential storage.
+* Encrypted provider secrets.
+* Signed webhooks.
+* CSRF protection.
+* Rate limiting.
+* SSRF protection.
+* Input validation.
+* Output encoding.
+* Secure file uploads.
+* Audit logging.
+* Data retention policies.
+* Privacy controls.
+* Consent management.
+* Affiliate disclosures.
+* Cookie disclosures.
+* Unsubscribe and communication preferences.
+* Applicable privacy and advertising compliance.
+* Tax and payout compliance workflows.
+
+Provide configurable program terms and merchant-specific affiliate agreements.
+
+23. ADMINISTRATION
+
+Create a complete affiliate administration center.
+
+Administrators can:
+
+* Approve and reject affiliates.
+* Suspend accounts.
+* Configure affiliate programs.
+* Set commission rates.
+* Enable or disable MLM.
+* Set rank qualifications.
+* Configure recurring commissions.
+* Set attribution windows.
+* Approve conversions.
+* Reverse fraudulent commissions.
+* Review payout requests.
+* Configure payment integrations.
+* Connect merchant stores.
+* Manage affiliate networks.
+* Manage product parsers.
+* Approve campaigns.
+* Review casino compliance.
+* Manage localization.
+* Configure email notifications.
+* Configure automation.
+* Export reports.
+* Review audit logs.
+
+Every sensitive administrative action must have authorization checks and an audit record.
+
+24. PERFORMANCE & RELIABILITY
+
+Implement:
+
+* Indexed tracking queries.
+* Asynchronous event processing.
+* Queue-based product updates.
+* Webhook retry handling.
+* Dead-letter processing.
+* Duplicate event protection.
+* Caching where appropriate.
+* Database transaction safety.
+* Background job monitoring.
+* Pagination.
+* Batch imports.
+* Monitoring and alerts.
+* Backup and recovery procedures.
+
+Do not promise unlimited scale without capacity planning. The product must support controlled horizontal growth and configurable operational limits.
+
+25. PRICING & COMMERCIAL POSITIONING
+
+Preserve the V1.1.0 pricing and subscription system.
+
+The following are proposed marketing tiers, not permission to advertise features that are not implemented:
+
+Plan	Proposed price	Positioning
+Free	$0	Learn and launch
+Pro	$29/month	Individual affiliate marketers
+Elite	$79/month	Growing affiliate teams
+Enterprise	From $199/month	Merchants and larger organizations
+
+Configure limits and entitlements centrally.
+
+Possible plan distinctions:
+
+* Number of campaigns.
+* Connected stores.
+* AI usage.
+* Product discovery volume.
+* Affiliate program features.
+* Advanced reporting.
+* MLM tools.
+* Automation volume.
+* API access.
+* Team seats.
+* Support level.
+
+Unlimited affiliate membership can be supported as a program capability while platform usage remains subject to fair-use and infrastructure safeguards.
+
+26. IMPLEMENTATION PHASES
+
+Do not attempt an uncontrolled rewrite.
+
+Phase 0 — Repository inventory
+
+* Inspect the complete codebase.
+* Map existing architecture.
+* Identify current database tables.
+* Inventory routes, services, agents, and integrations.
+* Document what already works.
+* Identify conflicts and missing capabilities.
+* Create docs/V1_2_INVENTORY.md.
+
+Phase 1 — Core affiliate engine
+
+* Registration.
+* Approval.
+* Affiliate portal.
+* Links.
+* QR codes.
+* Referral tracking.
+* Conversion attribution.
+
+Phase 2 — Commission engine
+
+* Commission rules.
+* MLM relationships.
+* Rank bonuses.
+* Lifetime commissions.
+* Recurring commissions.
+* Refund and reversal handling.
+
+Phase 3 — Commerce integrations
+
+* WooCommerce.
+* WooCommerce Subscriptions.
+* Additional e-commerce adapters.
+* Product retrieval.
+* Webhook ingestion.
+* Integration health checks.
+
+Phase 4 — Payouts and fraud
+
+* PayPal Payouts.
+* Stripe Connect.
+* Paystack Payouts.
+* Manual exports.
+* Fraud review.
+* Reconciliation.
+
+Phase 5 — Affiliate marketplace
+
+* Network directory.
+* Merchant directory.
+* Product discovery.
+* Custom parsers.
+* Campaign storefronts.
+
+Phase 6 — AI and casino vertical
+
+* AI campaign factory.
+* Content generation.
+* Authorized distribution.
+* Casino-specific compliance and tracking.
+
+Phase 7 — Global UX and analytics
+
+* Simplified navigation.
+* Beginner onboarding.
+* Affiliate analytics.
+* Enterprise analytics.
+* Multilingual and RTL.
+
+Phase 8 — Production verification
+
+* Full automated testing.
+* Security testing.
+* Integration testing.
+* Performance testing.
+* Recovery testing.
+* Documentation.
+* Deployment readiness report.
+
+27. PRODUCTION ACCEPTANCE GATES
+
+All twelve gates must be verified:
+
+1. UI event works.
+2. Client handler executes.
+3. API route responds correctly.
+4. Authentication and RBAC are enforced.
+5. Tenant isolation is enforced.
+6. Service logic calculates the correct result.
+7. Database transaction commits correctly.
+8. External provider returns a valid response.
+9. Independent read-back verifies the result.
+10. Audit log records the operation.
+11. Automated tests pass.
+12. Failure and rollback behavior is verified.
+
+Mandatory end-to-end proof chain
+
+UI Event → Client Handler → API Route → Authentication/RBAC → Tenant Isolation → Service Logic → Database Operation → External Provider Response → Read-back Verification → Audit Log → UI Update.
+
+Required scenarios
+
+* Affiliate registers and gets approved.
+* Affiliate creates a link and QR code.
+* Customer clicks the link.
+* Customer completes a real test purchase.
+* Conversion is attributed correctly.
+* Commission is calculated correctly.
+* Sub-affiliate commissions are calculated correctly.
+* Refund reverses eligible commissions.
+* Subscription renewal produces the correct recurring commission.
+* Rank promotion is correctly triggered.
+* Duplicate webhooks do not duplicate earnings.
+* Fraud flags suspicious activity.
+* Payout request is approved.
+* Provider payout is independently reconciled.
+* Tenant A cannot access Tenant B data.
+* Suspended affiliates cannot generate payable commissions.
+* Unauthorized users cannot modify commission rules.
+* Product retrieval failures are handled safely.
+* Campaign publishing failures do not report false success.
+
+28. DOCUMENTATION
+
+Create and maintain:
+
+* docs/V1_2_INVENTORY.md
+* docs/V1_2_ARCHITECTURE.md
+* docs/V1_2_IMPLEMENTATION.md
+* docs/V1_2_API.md
+* docs/V1_2_AFFILIATE_GUIDE.md
+* docs/V1_2_MERCHANT_GUIDE.md
+* docs/V1_2_MLM_COMMISSION_GUIDE.md
+* docs/V1_2_PAYOUT_GUIDE.md
+* docs/V1_2_ECOMMERCE_INTEGRATIONS.md
+* docs/V1_2_PRODUCT_DISCOVERY.md
+* docs/V1_2_CASINO_COMPLIANCE.md
+* docs/V1_2_SECURITY.md
+* docs/V1_2_TESTING.md
+* docs/V1_2_DEPLOYMENT.md
+* docs/V1_2_EVIDENCE.md
+
+Documentation must describe implemented behavior, not imagined functionality.
+
+29. FINAL EXECUTION INSTRUCTIONS
+
+Start by inspecting the existing project and writing the V1.2.0 inventory.
+
+Then implement the upgrade incrementally.
+
+Rules:
+
+* Preserve working V1.1.0 functionality.
+* Do not replace existing architecture without evidence.
+* No fake integrations.
+* No simulated payouts presented as real payments.
+* No fake sales, commissions, or conversion statistics.
+* No duplicate authentication or subscription systems.
+* No hardcoded secrets.
+* No unsafe scraping.
+* No misleading network approval claims.
+* No unauthorized social publishing.
+* No recruitment-only MLM compensation.
+* No unsupported casino promotion.
+* No silent feature downgrades.
+* No claiming deployment or tests succeeded without execution evidence.
+
+Set productionReady: false until all required production acceptance gates have passed.
+
+At completion, deliver:
+
+1. Updated repository file tree.
+2. Actual files created and modified.
+3. Database migrations.
+4. API and integration documentation.
+5. Test results.
+6. Security findings.
+7. Integration verification results.
+8. Screenshots or other execution evidence.
+9. Known limitations.
+10. Remaining blockers.
+11. Deployment instructions.
+12. Final production readiness assessment.
+
+BUILD V1.2.0 AS A REAL, VERIFIED ENTERPRISE AFFILIATE COMMERCE PLATFORM — NOT A DEMO OR A STATIC DASHBOARD.

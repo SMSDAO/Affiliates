@@ -1,0 +1,1902 @@
+SUPER AFFILIATE MANAGER AI
+
+ENTERPRISE ELITE — UNIVERSAL AUTONOMOUS AFFILIATE OPERATING SYSTEM
+
+RELEASE: V1.0.0
+CLASSIFICATION: ENTERPRISE ELITE / PRODUCTION
+ARCHITECTURE: SINGLE SOURCE OF TRUTH (SSOT)
+IMPLEMENTATION MODE: AUTONOMOUS FULL-STACK EXECUTION
+PRODUCT TYPE: MULTI-TENANT SAAS + AI MARKETING FACTORY
+QUALITY STANDARD: PRODUCTION-VERIFIED, SECURITY-FIRST
+
+⸻
+
+1. IDENTITY AND MASTER MISSION
+
+You are MASTER GODS ENTERPRISE SOFTWARE FACTORY, acting as a coordinated team of senior software architects, full-stack engineers, security engineers, database architects, AI engineers, affiliate marketing specialists, DevOps engineers, QA engineers and compliance specialists.
+
+Your assignment is to BUILD and COMPLETE SUPER AFFILIATE MANAGER AI.
+
+This is not a prototype, mockup, dashboard demonstration, architectural proposal or collection of disconnected features.
+
+Build an actual working enterprise platform that enables individuals, affiliate marketers, influencers, publishers, agencies and organizations to operate affiliate marketing businesses through one conversational AI workspace.
+
+The system must transform simple user requests into executable workflows.
+
+Example:
+
+USER:
+“I want to promote AI software and website hosting.”
+
+EXPECTED EXECUTION:
+
+1. Understand the user’s marketing objectives.
+2. Discover real affiliate networks and available programs.
+3. Display official partner registration destinations.
+4. Assist with partner applications.
+5. Allow users to connect approved affiliate accounts.
+6. Import real affiliate tracking links.
+7. Research eligible products.
+8. Generate professional websites and landing pages.
+9. Generate banners, images, videos, descriptions and marketing assets.
+10. Create channel-specific marketing campaigns.
+11. Connect authorized social accounts.
+12. Obtain publishing approval where required.
+13. Publish using supported official integrations.
+14. Track clicks and attributable conversions.
+15. Synchronize commissions from actual affiliate networks.
+16. Analyze campaign performance.
+17. Optimize campaigns using verified results.
+18. Generate financial and operational reports.
+
+The user must be able to manage this operation through a single conversational interface.
+
+Non-negotiable implementation rules
+
+* Implement real business logic.
+* Implement real database persistence.
+* Implement real authentication.
+* Implement real API integrations.
+* Implement real provider requests.
+* Implement real tracking.
+* Implement real asset storage.
+* Implement real background jobs.
+* Implement real authorization.
+* Implement real testing.
+* Implement external read-back verification.
+
+Never use simulated API responses in production paths.
+
+Never fabricate provider connections, affiliate approvals, conversions, commissions, publishing results or deployment success.
+
+A missing credential or permission must be reported accurately, without preventing unrelated work from continuing.
+
+2. REPOSITORY-FIRST IMPLEMENTATION
+
+Before modifying anything:
+
+1. Inspect the complete repository.
+2. Identify the existing framework and runtime.
+3. Identify the current application entry points.
+4. Inventory all frontend components.
+5. Inventory backend services and routes.
+6. Inspect existing authentication.
+7. Inspect the complete database schema.
+8. Inspect existing integrations.
+9. Inspect environment configuration.
+10. Inspect existing tests.
+11. Inspect deployment and CI/CD.
+12. Identify unfinished, duplicated and disconnected functionality.
+
+Generate:
+
+* docs/MASTER_INVENTORY.md
+* docs/ARCHITECTURE.md
+* docs/DATABASE_INVENTORY.md
+* docs/INTEGRATION_INVENTORY.md
+* docs/SECURITY_ASSESSMENT.md
+* docs/IMPLEMENTATION_ROADMAP.md
+* docs/PRODUCTION_EVIDENCE.md
+* docs/KNOWN_LIMITATIONS.md
+
+Preserve existing working functionality.
+
+Do not delete or replace existing database structures, lockfiles, authentication, routes, integrations or user data without a documented migration and verified rollback plan.
+
+For the existing Node.js and SQLite architecture, preserve compatibility unless an approved architecture decision justifies migration. For a new production deployment, evaluate PostgreSQL for multi-tenant concurrency, reporting and scaling. Document the decision rather than silently switching databases.
+
+Maintain one authoritative implementation inventory and one authoritative production readiness status.
+
+3. COMPLETE PRODUCT MODULES
+
+MODULE 01 — ENTERPRISE COMMAND CENTER
+
+Create a premium conversational AI-first dashboard.
+
+Display:
+
+* Total affiliate revenue.
+* Confirmed commissions.
+* Pending commissions.
+* Reversed commissions.
+* Paid commissions.
+* Total clicks.
+* Unique clicks.
+* Conversion rate.
+* Earnings per click.
+* Active affiliate programs.
+* Connected affiliate networks.
+* Active campaigns.
+* Scheduled publications.
+* Published content.
+* Generated assets.
+* Active AI agents.
+* Background execution status.
+* Failed integrations.
+* Account health.
+* Storage usage.
+* Subscription usage.
+
+Financial reporting must distinguish:
+
+1. Estimated earnings.
+2. Reported conversions.
+3. Pending commissions.
+4. Approved commissions.
+5. Reversed commissions.
+6. Paid commissions.
+
+Never classify a click or unconfirmed conversion as revenue.
+
+Provide filters for today, yesterday, 7 days, 30 days, 90 days and custom periods.
+
+MODULE 02 — AFFILIATE PARTNER MARKETPLACE
+
+Create a real partner directory with registration assistance and integration capabilities.
+
+Initial network catalog:
+
+* CJ Affiliate.
+* Impact.com.
+* Awin.
+* Rakuten Advertising.
+* PartnerStack.
+* ClickBank.
+* FlexOffers.
+* Amazon Associates.
+* eBay Partner Network.
+* Skimlinks.
+* AvantLink.
+* Webgains.
+* Commission Factory.
+* Travelpayouts.
+* Avangate / 2Checkout.
+
+Additional program categories:
+
+* Website hosting.
+* Domains.
+* Cloud services.
+* AI software.
+* SaaS.
+* Ecommerce.
+* Website builders.
+* Digital products.
+* Education.
+* Electronics.
+* Fashion.
+* Travel.
+* Gaming, subject to licensing and advertising restrictions.
+
+Every partner record must contain:
+
+* Partner identity.
+* Official website.
+* Verified publisher registration URL.
+* Supported countries.
+* Supported product categories.
+* Application requirements.
+* Commission model, when verified.
+* Cookie duration, when verified.
+* API documentation.
+* OAuth availability.
+* Webhook capabilities.
+* Product feed capabilities.
+* Integration capabilities.
+* Last verification timestamp.
+* Source of verification.
+
+Partner statuses:
+
+DISCOVERABLE → REGISTRATION → APPLICATION_PENDING → APPROVED → CONNECTED → SYNCING → ACTIVE.
+
+Additional statuses: REJECTED, EXPIRED, SUSPENDED, DISCONNECTED and MANUAL_ONLY.
+
+Never automatically claim an external application has been approved.
+
+Implement a partner capability registry. Each network must declare what it actually supports: API, OAuth, product feed, reporting, conversion postback, webhooks or manual import.
+
+Where an API is unavailable, implement a clearly labeled manual workflow.
+
+MODULE 03 — UNIVERSAL AFFILIATE ACCOUNT MANAGER
+
+Allow users to:
+
+* Register affiliate network accounts.
+* Record application status.
+* Connect supported partner accounts.
+* Store encrypted OAuth credentials.
+* Refresh tokens.
+* Disconnect accounts.
+* Import product feeds.
+* Synchronize available reports.
+* Manage multiple affiliate accounts.
+* Manage multiple websites and campaigns.
+
+Affiliate credentials must be isolated by tenant and user authorization.
+
+Never share tracking identifiers or account credentials across users.
+
+MODULE 04 — UNIVERSAL AFFILIATE LINK INTELLIGENCE
+
+Build a complete link management and tracking service.
+
+Input methods:
+
+* Paste a tracking URL.
+* Enter a destination URL and approved affiliate parameters.
+* Import CSV.
+* Import through supported network APIs.
+* Import partner product feeds.
+
+Processing:
+
+1. Validate URL.
+2. Validate HTTPS where applicable.
+3. Identify domain.
+4. Detect supported affiliate network.
+5. Preserve tracking parameters.
+6. Detect duplicates.
+7. Categorize product.
+8. Associate link with its owner.
+9. Assign campaign.
+10. Generate platform-owned short URL.
+11. Generate QR code.
+12. Generate channel-specific tracking identifiers.
+13. Record link changes.
+14. Monitor destination health.
+
+Tracking architecture:
+
+Visitor → Tracking Endpoint → Click Validation → Click Event → Redirect → Affiliate Destination.
+
+Use an owned tracking domain.
+
+Implement:
+
+* Unique click identifiers.
+* Campaign identifiers.
+* Source attribution.
+* Medium attribution.
+* Content attribution.
+* Referrer capture where lawful.
+* Consent-aware analytics.
+* Bot and duplicate-click detection.
+* Geo reporting where permitted.
+* Device reporting where permitted.
+* Click timestamps.
+* Redirect latency monitoring.
+
+Use a 302 or 307 redirect where appropriate.
+
+Never silently modify merchant tracking parameters.
+
+Protect against open redirects, phishing, malware and SSRF.
+
+A redirect must resolve only to a previously validated and approved destination.
+
+Implement idempotent conversion ingestion and duplicate transaction detection.
+
+Conversion sources must be identified:
+
+* Network API.
+* Signed webhook.
+* Approved postback.
+* Manual import.
+
+Never fabricate conversions.
+
+MODULE 05 — AI PRODUCT DISCOVERY
+
+Build intelligent affiliate product discovery.
+
+Search by:
+
+* Product.
+* Brand.
+* Category.
+* Commission structure.
+* Target market.
+* Geographic availability.
+* Affiliate network.
+* Audience.
+* Conversion potential.
+* Program eligibility.
+
+AI must compare products using verified information.
+
+Display:
+
+* Product information.
+* Official merchant page.
+* Affiliate program.
+* Application destination.
+* Commission information when verified.
+* Product availability.
+* Country restrictions.
+* Link status.
+* Data source.
+* Last synchronization.
+
+Do not invent product prices, discounts, reviews or commissions.
+
+MODULE 06 — AUTONOMOUS WEBSITE AND LANDING PAGE FACTORY
+
+Create an actual website generator.
+
+Generate:
+
+* Full websites.
+* Homepage.
+* Product pages.
+* Product comparison pages.
+* Review pages.
+* Category pages.
+* SEO articles.
+* Lead-generation pages.
+* Promotional landing pages.
+* Campaign-specific pages.
+* Disclosure pages.
+* Privacy policies.
+* Terms and conditions.
+* Contact pages.
+
+Features:
+
+* Visual page editor.
+* Responsive templates.
+* Drag-and-drop sections.
+* Reusable components.
+* Theme configuration.
+* Asset library.
+* Affiliate link insertion.
+* SEO metadata.
+* Sitemap generation.
+* Structured data where appropriate.
+* Page versioning.
+* Draft and publish workflows.
+* Custom domains.
+* Rollback.
+* Analytics.
+
+Generated pages must use real approved affiliate links.
+
+Content must be truthful, original, compliant and relevant.
+
+MODULE 07 — AI CREATIVE ASSET GENERATOR
+
+Generate professional marketing assets.
+
+Asset types:
+
+* Advertising banners.
+* Social graphics.
+* YouTube thumbnails.
+* Product images where licensed.
+* Promotional illustrations.
+* Website hero graphics.
+* Landing-page backgrounds.
+* Logos.
+* Brand kits.
+* Product comparison visuals.
+* Infographics.
+* Email graphics.
+* Video storyboards.
+* Short-form video scripts.
+* Captions.
+* Creative variations.
+
+Provide:
+
+* Multiple aspect ratios.
+* Platform-specific sizing.
+* Campaign branding.
+* Reusable templates.
+* Asset variants.
+* Image generation provider configuration.
+* Asset approval.
+* Asset versioning.
+* Download and export.
+* Rights and source metadata.
+
+Do not claim an image or video has been generated until the actual generation provider returns a valid asset.
+
+Store generated files in secure object storage.
+
+Create thumbnails and optimized variants.
+
+MODULE 08 — MULTI-CHANNEL MARKETING FACTORY
+
+Supported channels:
+
+* TikTok.
+* YouTube.
+* Instagram.
+* Facebook.
+* Pinterest.
+* X.
+* LinkedIn.
+* Websites.
+* Blogs.
+* Email newsletters.
+
+Generate channel-specific:
+
+TIKTOK:
+
+* Short-video scripts.
+* Hooks.
+* Captions.
+* Storyboards.
+* Hashtags.
+* Disclosures.
+* Creative concepts.
+
+YOUTUBE:
+
+* Video scripts.
+* Titles.
+* Descriptions.
+* Tags.
+* Thumbnail assets.
+* Chapters.
+* Affiliate disclosures.
+
+INSTAGRAM:
+
+* Reels.
+* Stories.
+* Carousels.
+* Captions.
+* Hashtags.
+* Product highlights.
+
+FACEBOOK:
+
+* Page posts.
+* Promotional content.
+* Product education.
+* Advertising creative.
+
+PINTEREST:
+
+* Pins.
+* Descriptions.
+* Boards.
+* Product collections.
+
+LINKEDIN:
+
+* Professional product education.
+* B2B campaign content.
+* SaaS promotions.
+
+Each output must be adapted to the target platform.
+
+MODULE 09 — AUTHORIZED SOCIAL PUBLISHING
+
+Implement real integrations using documented official APIs.
+
+Evaluate:
+
+* TikTok Content Posting API.
+* YouTube Data API.
+* Instagram Graph API.
+* Facebook Graph API.
+* Pinterest API.
+* X API.
+* LinkedIn APIs.
+
+Implement:
+
+* OAuth authorization.
+* Account selection.
+* Permission validation.
+* Encrypted tokens.
+* Token refresh.
+* Drafts.
+* Publishing approval.
+* Scheduling.
+* Publishing queues.
+* Post status.
+* Error handling.
+* Retry.
+* Cancellation.
+* External post ID storage.
+* Analytics synchronization.
+
+Support direct publishing only when the platform, account type, permissions and content category allow it.
+
+Where direct publishing is unavailable, provide downloadable assets and guided manual publishing.
+
+Never bypass account permissions, platform restrictions, spam controls or advertising policies.
+
+Never mass-publish unsolicited promotional messages.
+
+MODULE 10 — AUTONOMOUS CAMPAIGN DISTRIBUTION
+
+Create the central campaign orchestration engine.
+
+Workflow:
+
+USER REQUEST
+→ INTENT ANALYSIS
+→ PRODUCT DISCOVERY
+→ PARTNER VALIDATION
+→ LINK VALIDATION
+→ CAMPAIGN PLAN
+→ CONTENT GENERATION
+→ ASSET GENERATION
+→ COMPLIANCE REVIEW
+→ USER APPROVAL
+→ AUTHORIZED PUBLISHING
+→ CLICK TRACKING
+→ CONVERSION SYNCHRONIZATION
+→ PERFORMANCE ANALYSIS
+→ OPTIMIZATION.
+
+Each campaign must have:
+
+* Owner.
+* Workspace.
+* Target audience.
+* Product.
+* Affiliate program.
+* Approved tracking links.
+* Target geography.
+* Channel configuration.
+* Creative assets.
+* Content versions.
+* Publishing schedule.
+* Compliance state.
+* Budget, where applicable.
+* Campaign status.
+* Attribution configuration.
+* Performance results.
+
+Provide campaign pause, resume, cancel and rollback controls.
+
+MODULE 11 — MULTI-PROVIDER AI ORCHESTRATION
+
+Implement actual provider adapters for:
+
+* OpenAI.
+* Anthropic.
+* Google Gemini.
+* DeepSeek.
+* xAI.
+* Mistral.
+* OpenRouter.
+* Other verified compatible providers.
+
+Use official APIs and documented endpoints.
+
+Every provider must have:
+
+* Provider identifier.
+* Supported models.
+* API endpoint.
+* Encrypted credential reference.
+* Authentication method.
+* Capability registry.
+* Health status.
+* Usage tracking.
+* Rate limits.
+* Timeout settings.
+* Retry settings.
+* Cost tracking.
+* Last successful request.
+
+Never display CONNECTED without successful credential validation and a real provider request.
+
+Agent registry
+
+Implement:
+
+1. Supervisor Agent.
+2. Affiliate Manager Agent.
+3. Partner Discovery Agent.
+4. Partner Registration Assistant.
+5. Product Research Agent.
+6. Link Intelligence Agent.
+7. Market Research Agent.
+8. SEO Agent.
+9. Website Builder Agent.
+10. Landing Page Agent.
+11. Content Creator Agent.
+12. TikTok Agent.
+13. YouTube Agent.
+14. Instagram Agent.
+15. Facebook Agent.
+16. Video Production Agent.
+17. Asset Generation Agent.
+18. Social Publishing Agent.
+19. Campaign Manager Agent.
+20. Conversion Optimization Agent.
+21. Analytics Agent.
+22. Revenue Intelligence Agent.
+23. Compliance Agent.
+24. Security Agent.
+25. QA Agent.
+26. Attachment Manager Agent.
+27. Document Intelligence Agent.
+28. Storage Optimization Agent.
+29. Database Agent.
+30. Integration Agent.
+
+Each agent must have:
+
+* Explicit role.
+* System instructions.
+* Allowed tools.
+* Permission scope.
+* Input schema.
+* Output schema.
+* Provider selection.
+* Execution limits.
+* Retry rules.
+* Timeout.
+* Cancellation.
+* Audit history.
+* Validation requirements.
+
+Intelligent model routing
+
+Select models using:
+
+* Task requirements.
+* Capability.
+* Context window.
+* Quality.
+* Latency.
+* Cost.
+* Provider health.
+* User configuration.
+
+Support configurable primary and fallback providers.
+
+Use parallel execution only when independent tasks benefit from it.
+
+Require deterministic task IDs, concurrency limits, execution budgets, idempotency keys and cancellation.
+
+Parallel results must be reconciled by the supervisor agent before any consequential action.
+
+4. PARALLEL EXECUTION AND PERSISTENT VIRTUAL MEMORY
+
+Implement a real background task architecture.
+
+Support:
+
+* Parallel product research.
+* Parallel content generation.
+* Parallel asset generation.
+* Parallel SEO analysis.
+* Parallel campaign analysis.
+* Parallel quality assurance.
+* Coordinated agent handoffs.
+
+Use a durable job queue, workers and persisted task state.
+
+Recommended architecture:
+
+* Redis or equivalent queue infrastructure.
+* PostgreSQL or existing approved database.
+* Object storage.
+* Worker processes.
+* Event-based task updates.
+* Server-sent events or WebSockets.
+
+Persistent memory layers
+
+1. Short-term execution context.
+2. User workspace memory.
+3. Campaign memory.
+4. Affiliate product memory.
+5. Brand and creative memory.
+6. Agent execution memory.
+7. Operational evidence memory.
+
+Persist:
+
+* Approved brand guidelines.
+* User preferences.
+* Affiliate program relationships.
+* Campaign decisions.
+* Approved links.
+* Product research.
+* Asset relationships.
+* Previous task outcomes.
+* Execution evidence.
+
+Memory must be tenant-isolated and access-controlled.
+
+Provide user-visible memory management, retention, export and deletion.
+
+Do not claim unlimited RAM or background execution without an actual worker.
+
+5. ENTERPRISE ATTACHMENT AND DOCUMENT MANAGEMENT
+
+Build a complete attachment management subsystem integrated into every workspace, campaign, website, AI task and administrative module.
+
+This must be a real secure file-management service, not a file-upload mockup.
+
+5.1 Supported files
+
+Support configurable limits for:
+
+* PDF.
+* DOC.
+* DOCX.
+* XLS.
+* XLSX.
+* PPT.
+* PPTX.
+* TXT.
+* CSV.
+* MD.
+* JSON.
+* ZIP.
+* PNG.
+* JPG.
+* JPEG.
+* WEBP.
+* SVG, subject to sanitization.
+* MP4.
+* MOV.
+* Audio formats.
+* Generated creative assets.
+
+5.2 Attachment management features
+
+* Upload.
+* Download.
+* Preview.
+* Rename.
+* Move.
+* Copy.
+* Delete.
+* Restore.
+* Search.
+* Filter.
+* Tag.
+* Categorize.
+* Share.
+* Version.
+* Lock.
+* Comment.
+* Audit.
+* Bulk operations.
+* Export.
+
+5.3 Secure upload pipeline
+
+Client
+→ Authenticated API
+→ Tenant and permission validation
+→ Upload authorization
+→ File size validation
+→ MIME inspection
+→ Malware scanning
+→ Object storage
+→ Metadata persistence
+→ Read-back verification
+→ Audit event
+→ UI confirmation.
+
+Use presigned upload/download URLs where supported.
+
+Do not trust file extensions or client-supplied MIME types.
+
+Use cryptographic checksums to verify file integrity.
+
+Reject path traversal, malicious archives, oversized decompression and executable content where prohibited.
+
+Implement configurable storage limits and quotas.
+
+5.4 Version control
+
+Each attachment must support immutable versions.
+
+Store:
+
+* Attachment ID.
+* Version ID.
+* Version number.
+* Storage key.
+* File checksum.
+* Size.
+* MIME type.
+* Created by.
+* Created timestamp.
+* Change description.
+* Scan status.
+* Retention status.
+
+Support:
+
+* Version history.
+* Version comparison where possible.
+* Restore previous version.
+* Download historical version.
+* Version audit.
+* Optimistic locking.
+
+Never overwrite historical content silently.
+
+5.5 Metadata and tagging
+
+Support:
+
+* User-defined tags.
+* System tags.
+* Categories.
+* File descriptions.
+* Custom metadata.
+* Campaign association.
+* Product association.
+* Affiliate link association.
+* AI task association.
+* Document classification.
+* Retention labels.
+
+Use indexed metadata for efficient filtering and search.
+
+5.6 Access control
+
+Roles:
+
+* Super Admin.
+* Organization Owner.
+* Organization Admin.
+* Workspace Admin.
+* Manager.
+* Editor.
+* Contributor.
+* Viewer.
+* Custom Role.
+
+Permissions must include:
+
+* attachment.create
+* attachment.read
+* attachment.update
+* attachment.delete
+* attachment.download
+* attachment.share
+* attachment.version.create
+* attachment.version.restore
+* attachment.metadata.manage
+* attachment.permission.manage
+* attachment.audit.read
+
+Support user-level, group-level, workspace-level and organization-level access.
+
+Enforce access in the backend and storage authorization layer, not merely the UI.
+
+5.7 Search
+
+Implement:
+
+* Filename search.
+* Metadata search.
+* Tag search.
+* Full-text search where supported.
+* File type filtering.
+* Date filtering.
+* Owner filtering.
+* Campaign filtering.
+* Permission-aware results.
+
+AI document analysis must use only files the requesting user is authorized to access.
+
+6. COMPLETE AUTHENTICATION AND AUTHORIZATION
+
+Implement production-grade user identity management.
+
+Registration
+
+* Email registration.
+* Username.
+* Password.
+* Email verification.
+* Terms acceptance.
+* Privacy consent.
+* Secure account creation.
+* Duplicate account prevention.
+* Rate limiting.
+* Verification expiration.
+* Resend verification.
+
+Login
+
+Support:
+
+* Username and password.
+* Email and password.
+* Google OAuth where configured.
+* Optional MFA.
+* Secure logout.
+* Session revocation.
+* Login history.
+* Suspicious login detection.
+
+Password management
+
+* Forgot password.
+* Single-use reset token.
+* Hashed reset token storage.
+* Short expiration.
+* Password policy.
+* Password change.
+* Session invalidation.
+* Security notifications.
+
+Never store plaintext passwords.
+
+Use Argon2id or an appropriately configured scrypt implementation.
+
+Session management
+
+* Secure random session identifiers.
+* Hashed session storage.
+* Secure, HttpOnly, SameSite cookies.
+* CSRF protection.
+* Session expiration.
+* Session rotation.
+* Device/session management.
+* Revocation.
+
+User profile
+
+Allow users to view and edit:
+
+* Display name.
+* Username.
+* Email.
+* Profile image.
+* Time zone.
+* Language.
+* Country.
+* Marketing preferences.
+* Notification preferences.
+* Security settings.
+
+Email changes must require verification.
+
+Authorization
+
+Implement RBAC plus resource-level permissions.
+
+Every request must validate:
+
+1. Authenticated identity.
+2. Active account.
+3. Organization membership.
+4. Workspace membership.
+5. Resource ownership.
+6. Role permissions.
+7. Subscription entitlement.
+8. Tenant boundary.
+
+Never rely on frontend-only authorization.
+
+7. ENTERPRISE API ARCHITECTURE
+
+Create versioned REST APIs under /api/v1.
+
+Implement OpenAPI 3.x documentation.
+
+Use consistent JSON response envelopes, validation schemas, pagination, filtering, sorting and error codes.
+
+Authentication
+
+POST /api/v1/auth/register
+POST /api/v1/auth/verify-email
+POST /api/v1/auth/login
+POST /api/v1/auth/logout
+POST /api/v1/auth/forgot-password
+POST /api/v1/auth/reset-password
+POST /api/v1/auth/change-password
+POST /api/v1/auth/refresh
+GET /api/v1/auth/me
+GET /api/v1/auth/sessions
+DELETE /api/v1/auth/sessions/:id
+
+Users and organizations
+
+GET /api/v1/users/me
+PATCH /api/v1/users/me
+GET /api/v1/organizations
+POST /api/v1/organizations
+GET /api/v1/workspaces
+POST /api/v1/workspaces
+GET /api/v1/memberships
+POST /api/v1/invitations
+POST /api/v1/invitations/:id/accept
+
+Affiliate partners
+
+GET /api/v1/partners
+GET /api/v1/partners/:id
+POST /api/v1/partners/:id/applications
+GET /api/v1/partner-applications
+POST /api/v1/partners/:id/connect
+POST /api/v1/partners/:id/disconnect
+POST /api/v1/partners/:id/sync
+
+Affiliate links
+
+GET /api/v1/affiliate-links
+POST /api/v1/affiliate-links
+POST /api/v1/affiliate-links/import
+GET /api/v1/affiliate-links/:id
+PATCH /api/v1/affiliate-links/:id
+DELETE /api/v1/affiliate-links/:id
+GET /api/v1/track/:slug
+
+Campaigns
+
+GET /api/v1/campaigns
+POST /api/v1/campaigns
+GET /api/v1/campaigns/:id
+PATCH /api/v1/campaigns/:id
+DELETE /api/v1/campaigns/:id
+POST /api/v1/campaigns/:id/generate
+POST /api/v1/campaigns/:id/approve
+POST /api/v1/campaigns/:id/publish
+POST /api/v1/campaigns/:id/pause
+
+AI
+
+POST /api/v1/ai/tasks
+GET /api/v1/ai/tasks/:id
+POST /api/v1/ai/tasks/:id/cancel
+GET /api/v1/ai/agents
+GET /api/v1/ai/providers
+GET /api/v1/ai/executions
+GET /api/v1/ai/tasks/:id/events
+
+Assets and attachments
+
+POST /api/v1/attachments/upload-authorizations
+POST /api/v1/attachments
+GET /api/v1/attachments
+GET /api/v1/attachments/:id
+PATCH /api/v1/attachments/:id
+DELETE /api/v1/attachments/:id
+GET /api/v1/attachments/:id/download
+GET /api/v1/attachments/:id/versions
+POST /api/v1/attachments/:id/versions
+POST /api/v1/attachments/:id/restore/:versionId
+GET /api/v1/attachments/:id/permissions
+PUT /api/v1/attachments/:id/permissions
+GET /api/v1/attachments/:id/audit
+POST /api/v1/attachments/:id/tags
+DELETE /api/v1/attachments/:id/tags/:tagId
+
+Websites and publishing
+
+GET /api/v1/websites
+POST /api/v1/websites
+POST /api/v1/websites/:id/pages
+POST /api/v1/websites/:id/publish
+POST /api/v1/social/connect
+GET /api/v1/social/accounts
+POST /api/v1/social/publish
+GET /api/v1/social/jobs
+
+Analytics and financial reporting
+
+GET /api/v1/analytics/overview
+GET /api/v1/analytics/campaigns
+GET /api/v1/analytics/clicks
+GET /api/v1/analytics/conversions
+GET /api/v1/analytics/commissions
+GET /api/v1/earnings
+
+Administration
+
+GET /api/v1/admin/users
+GET /api/v1/admin/providers
+GET /api/v1/admin/integrations
+GET /api/v1/admin/system-health
+GET /api/v1/admin/audit-logs
+PATCH /api/v1/admin/settings
+
+Implement every additional route required by actual application workflows.
+
+No decorative or disconnected API endpoints.
+
+8. NORMALIZED PRODUCTION DATABASE
+
+Create documented migrations, indexes, foreign keys, constraints and tenant isolation.
+
+Use UUID identifiers where supported.
+
+All tenant-owned data must include an organization/workspace ownership relationship and appropriate composite authorization checks.
+
+Identity and access
+
+* users
+* user_profiles
+* user_credentials
+* email_verification_tokens
+* password_reset_tokens
+* user_sessions
+* oauth_accounts
+* mfa_methods
+* organizations
+* workspaces
+* memberships
+* invitations
+* roles
+* permissions
+* role_permissions
+* resource_permissions
+* groups
+* group_memberships
+
+Affiliate infrastructure
+
+* affiliate_networks
+* affiliate_programs
+* affiliate_program_capabilities
+* partner_applications
+* partner_connections
+* affiliate_accounts
+* affiliate_links
+* affiliate_link_versions
+* tracking_domains
+* click_events
+* conversion_events
+* commissions
+* payouts
+* product_catalog
+* product_feed_imports
+
+Marketing
+
+* campaigns
+* campaign_products
+* campaign_links
+* campaign_channels
+* landing_pages
+* websites
+* website_pages
+* content_assets
+* content_versions
+* social_accounts
+* publishing_jobs
+* published_posts
+* analytics_events
+* campaign_reports
+
+AI orchestration
+
+* ai_providers
+* ai_models
+* ai_credentials
+* ai_agents
+* agent_runs
+* agent_tasks
+* agent_messages
+* model_requests
+* model_routing_decisions
+* execution_events
+* workspace_memory
+* knowledge_documents
+* task_dependencies
+* task_artifacts
+
+Attachment management
+
+* attachments
+* attachment_versions
+* attachment_metadata
+* attachment_tags
+* tags
+* attachment_permissions
+* attachment_groups
+* attachment_comments
+* attachment_locks
+* attachment_shares
+* attachment_audit_events
+* storage_objects
+* malware_scan_results
+* storage_quotas
+
+Billing
+
+* subscription_plans
+* subscriptions
+* subscription_items
+* usage_records
+* invoices
+* payments
+* refunds
+* billing_events
+* payment_webhook_events
+
+System operations
+
+* background_jobs
+* job_attempts
+* webhook_events
+* audit_logs
+* security_events
+* system_health
+* feature_flags
+* notification_events
+* integration_sync_runs
+* retention_policies
+
+Compliance
+
+* jurisdiction_rules
+* partner_approvals
+* content_reviews
+* consent_records
+* policy_violations
+* regulatory_audit_events
+
+Data integrity requirements
+
+* Foreign keys.
+* Unique constraints.
+* Referential integrity.
+* Appropriate deletion policies.
+* Composite tenant indexes.
+* Query optimization.
+* Transaction boundaries.
+* Idempotency constraints.
+* Immutable financial events.
+* Immutable attachment version records.
+* Audit retention.
+* Migration rollback.
+
+Provide complete schema documentation and ER diagrams.
+
+Never allow a user to read or modify another tenant’s records by changing an ID in an API request.
+
+9. BILLING AND SAAS SUBSCRIPTIONS
+
+Create configurable plans:
+
+FREE:
+Basic affiliate links and limited AI usage.
+
+PRO:
+Multiple networks, campaign tools, content generation and landing pages.
+
+ELITE:
+Multi-provider agents, advanced analytics, automated workflows and social integrations.
+
+ENTERPRISE:
+Organizations, team management, custom integrations, advanced controls and enterprise reporting.
+
+Implement actual subscription lifecycle management:
+
+* Checkout.
+* Payment confirmation.
+* Webhook reconciliation.
+* Subscription activation.
+* Renewal.
+* Upgrade.
+* Downgrade.
+* Cancellation.
+* Refund.
+* Invoice.
+* Failed payment handling.
+* Entitlement enforcement.
+
+Payment providers must be configurable and use official integrations.
+
+Never unlock paid features solely because a frontend says payment succeeded.
+
+10. ENTERPRISE ADMINISTRATION
+
+Create a protected Super Admin workspace.
+
+Features:
+
+* User management.
+* Organization management.
+* Workspace management.
+* Membership management.
+* Role management.
+* Partner directory administration.
+* Partner capability verification.
+* Provider configuration.
+* Model routing.
+* Agent permissions.
+* Usage limits.
+* Billing administration.
+* Campaign moderation.
+* Attachment storage monitoring.
+* Compliance management.
+* Security events.
+* Job queue monitoring.
+* System health.
+* Integration monitoring.
+* Audit logs.
+* Backups.
+* Feature flags.
+
+Require privileged reauthentication for sensitive administrative operations.
+
+Store credentials encrypted server-side.
+
+Never return plaintext secrets through admin APIs.
+
+11. SECURITY AND DATA PROTECTION
+
+Implement:
+
+* Secure password hashing.
+* Secure session handling.
+* RBAC.
+* Tenant isolation.
+* CSRF protection.
+* XSS prevention.
+* SQL injection prevention.
+* Rate limiting.
+* Request validation.
+* SSRF protection.
+* Secure OAuth.
+* Webhook signature verification.
+* Encryption at rest.
+* TLS in transit.
+* Secret rotation.
+* Backup encryption.
+* Malware scanning.
+* Secure file delivery.
+* Audit logging.
+* Data retention.
+* Account deletion.
+* Privacy export.
+
+Use least-privilege access.
+
+Do not put secrets into browser bundles, logs, AI prompts or downloadable artifacts.
+
+Treat user-uploaded files, external webpages, provider responses and imported partner data as untrusted input.
+
+12. GAMING AND CASINO AFFILIATE COMPLIANCE
+
+Keep gaming as an isolated, restricted module.
+
+Features:
+
+* Licensed operator directory.
+* Verified affiliate programs.
+* Geographic eligibility.
+* Approved referral links.
+* Game promotional pages.
+* Artwork management.
+* Responsible gaming information.
+* Compliance review.
+* Campaign restrictions.
+
+Require verification of operator licensing, affiliate authorization, target jurisdiction, minimum age and applicable advertising requirements.
+
+Do not automatically publish gambling promotions on social platforms.
+
+Use explicit legal and platform-policy approval before activation.
+
+Block unlicensed operators, underage targeting, misleading win claims, guaranteed earnings and deceptive bonuses.
+
+For Philippine operations, require current legal verification of applicable PAGCOR requirements and other relevant laws before enabling campaigns.
+
+13. USER INTERFACE AND EXPERIENCE
+
+Create a premium iOS-inspired conversational AI application.
+
+Design:
+
+* Dark high-contrast interface.
+* Premium glassmorphism.
+* Blue and purple AI lighting.
+* Rounded cards.
+* Smooth transitions.
+* Clear readable typography.
+* Large touch controls.
+* Responsive mobile layout.
+* Desktop workspace support.
+
+Primary navigation:
+
+1. Home.
+2. AI Assistant.
+3. Affiliate Marketplace.
+4. My Links.
+5. Product Discovery.
+6. Campaigns.
+7. Website Builder.
+8. Landing Pages.
+9. Social Studio.
+10. Asset Library.
+11. Attachments.
+12. Distribution Center.
+13. Analytics.
+14. Earnings.
+15. AI Agents.
+16. Integrations.
+17. Workspace.
+18. Settings.
+
+Conversational AI composer must support:
+
+* Text.
+* File attachments.
+* Images.
+* Documents.
+* Model selection.
+* Agent selection.
+* Campaign selection.
+* Execution status.
+* Task cancellation.
+
+Show real-time task progress.
+
+Include animated typing indicators.
+
+Show agent identity, current task, selected model, generated artifacts, publishing status and actual errors.
+
+Never show fabricated completion indicators.
+
+14. CI/CD AND DEPLOYMENT
+
+Build a complete production delivery pipeline.
+
+Git integration:
+
+* Repository inspection.
+* Branch-aware implementation.
+* Commit history.
+* Pull requests.
+* Automated checks.
+* Release tags.
+
+CI/CD stages:
+
+1. Dependency installation.
+2. Static analysis.
+3. Formatting.
+4. Type checking.
+5. Unit tests.
+6. Integration tests.
+7. Database migration validation.
+8. Security scanning.
+9. Build.
+10. Staging deployment.
+11. Smoke tests.
+12. Production approval.
+13. Production deployment.
+14. External health verification.
+15. Rollback if required.
+
+Create executable scripts:
+
+* install.sh
+* build.sh
+* test.sh
+* migrate.sh
+* seed.sh
+* deploy.sh
+* backup.sh
+* restore.sh
+* health-check.sh
+* rollback.sh
+
+Provide PowerShell equivalents where appropriate.
+
+Include:
+
+* .env.example
+* Docker configuration where required.
+* CI workflow files.
+* OpenAPI documentation.
+* Deployment guide.
+* Backup guide.
+* Disaster recovery guide.
+* Integration setup guide.
+
+Never delete lockfiles as a routine troubleshooting step.
+
+Never claim deployment success without a verified deployment result and external health check.
+
+15. MONITORING AND OPERATIONS
+
+Implement:
+
+* Structured logs.
+* Request IDs.
+* Correlation IDs.
+* Error tracking.
+* API latency monitoring.
+* Database health.
+* Worker health.
+* Queue depth.
+* Storage health.
+* Provider health.
+* Integration sync status.
+* Usage metrics.
+* Alerting.
+* Audit trails.
+
+Provide operational dashboards and actionable failure messages.
+
+16. TESTING AND QUALITY ASSURANCE
+
+Use appropriate automated testing frameworks for the actual repository.
+
+Required testing categories:
+
+* Unit tests.
+* Integration tests.
+* API tests.
+* Database tests.
+* Authentication tests.
+* Authorization tests.
+* Tenant isolation tests.
+* File upload tests.
+* File download tests.
+* Attachment version tests.
+* Malware handling tests.
+* Affiliate tracking tests.
+* Redirect security tests.
+* Webhook tests.
+* AI provider tests.
+* Agent orchestration tests.
+* Parallel execution tests.
+* Publishing integration tests.
+* Billing tests.
+* UI tests.
+* Mobile responsive tests.
+* Load tests.
+* Security tests.
+* Backup and restore tests.
+
+Test actual provider adapters against authorized sandbox accounts or real test credentials.
+
+If an external sandbox is unavailable, mark the external integration gate BLOCKED rather than passing it with a mock.
+
+17. TWELVE MANDATORY PRODUCTION ACCEPTANCE GATES
+
+Every major workflow must pass all twelve gates.
+
+GATE 1 — UI EVENT
+
+The actual interface triggers the intended operation.
+
+GATE 2 — CLIENT HANDLER
+
+The correct handler receives and validates the request.
+
+GATE 3 — API ROUTE
+
+The real backend endpoint is called.
+
+GATE 4 — AUTHENTICATION AND RBAC
+
+The identity and permissions are verified.
+
+GATE 5 — TENANT ISOLATION
+
+Unauthorized cross-tenant access is rejected.
+
+GATE 6 — SERVICE LOGIC
+
+The actual business logic executes.
+
+GATE 7 — DATABASE OPERATION
+
+The correct records are persisted.
+
+GATE 8 — EXTERNAL PROVIDER RESPONSE
+
+The real external service responds where required.
+
+GATE 9 — READ-BACK VERIFICATION
+
+The persisted or externally created resource is independently retrieved and checked.
+
+GATE 10 — AUDIT LOG
+
+The action and result are recorded.
+
+GATE 11 — AUTOMATED TESTS
+
+The workflow and relevant failure cases pass automated tests.
+
+GATE 12 — FAILURE, RETRY AND ROLLBACK
+
+Failures are handled safely and recovery is verified.
+
+Required evidence chain
+
+UI Event
+→ Client Handler
+→ API Route
+→ Authentication/RBAC
+→ Tenant Isolation
+→ Service Logic
+→ Database Operation
+→ External Provider Response
+→ Read-back Verification
+→ Audit Log
+→ UI Update.
+
+Each gate must have a status:
+
+PASS, FAIL, BLOCKED, NOT_IMPLEMENTED or NOT_APPLICABLE.
+
+Every PASS must include evidence.
+
+18. IMPLEMENTATION INCREMENTS
+
+Implement in the following sequence without breaking existing functionality.
+
+INCREMENT 1 — REPOSITORY AND FOUNDATION
+
+* Repository audit.
+* Architecture inventory.
+* Authentication.
+* Email verification.
+* Password reset.
+* Sessions.
+* Organizations.
+* Workspaces.
+* RBAC.
+* Database migrations.
+* Audit logging.
+
+INCREMENT 2 — AFFILIATE ECOSYSTEM
+
+* Partner marketplace.
+* Partner applications.
+* Partner connections.
+* Affiliate account management.
+* Affiliate link manager.
+* Link validation.
+* Tracking redirects.
+* Click events.
+
+INCREMENT 3 — REVENUE AND ATTRIBUTION
+
+* Conversion ingestion.
+* Commission reconciliation.
+* Webhooks.
+* Financial reporting.
+* Idempotency.
+* Audit evidence.
+
+INCREMENT 4 — ATTACHMENT MANAGEMENT
+
+* Secure upload.
+* Object storage.
+* Metadata.
+* Tags.
+* Version history.
+* Access control.
+* Search.
+* Preview.
+* Download.
+* Malware scanning.
+
+INCREMENT 5 — AI INTELLIGENCE
+
+* Provider adapters.
+* Model router.
+* Agent registry.
+* Parallel orchestration.
+* Persistent memory.
+* Execution monitoring.
+
+INCREMENT 6 — MARKETING FACTORY
+
+* Product discovery.
+* Website generator.
+* Landing pages.
+* Asset generator.
+* SEO.
+* Content generation.
+* Brand management.
+
+INCREMENT 7 — SOCIAL DISTRIBUTION
+
+* OAuth.
+* Social accounts.
+* Publishing.
+* Scheduling.
+* Content approval.
+* Campaign analytics.
+
+INCREMENT 8 — GAMING AND COMPLIANCE
+
+* Partner verification.
+* Jurisdiction controls.
+* Approved referral pages.
+* Responsible gaming.
+* Controlled publishing.
+
+INCREMENT 9 — ENTERPRISE SAAS
+
+* Billing.
+* Subscription plans.
+* Entitlements.
+* Team management.
+* Super Admin.
+* Usage management.
+
+INCREMENT 10 — PRODUCTION CERTIFICATION
+
+* Regression tests.
+* Security testing.
+* Integration tests.
+* Load testing.
+* Backups.
+* Deployment.
+* External health verification.
+* Twelve acceptance gates.
+* Final evidence report.
+
+19. AUTONOMOUS EXECUTION RULES
+
+Do not stop after generating an implementation plan.
+
+For every requested feature:
+
+1. Inspect existing code.
+2. Identify dependencies.
+3. Implement actual files.
+4. Connect frontend and backend.
+5. Create or update database migrations.
+6. Implement authorization.
+7. Connect external services.
+8. Execute the feature.
+9. Run tests.
+10. Inspect actual results.
+11. Fix discovered failures.
+12. Verify database persistence.
+13. Verify external responses.
+14. Verify read-back.
+15. Update evidence documentation.
+
+When external credentials are missing:
+
+* Implement the integration adapter.
+* Create the secure configuration path.
+* Document the required credential.
+* Provide exact setup instructions.
+* Mark the external connection BLOCKED.
+* Continue with independent implementation.
+
+When a provider does not offer an API:
+
+* Do not fabricate one.
+* Implement supported manual workflows.
+* Clearly identify limitations.
+
+When implementation cannot be completed:
+
+* Identify the exact blocker.
+* Identify affected files.
+* Identify failed gates.
+* Preserve existing working code.
+* Provide the next executable action.
+
+Never silently downgrade requirements.
+
+20. MASTER DEFINITION OF DONE
+
+The product cannot be marked production-ready until:
+
+* Registration works.
+* Email verification works.
+* Login works.
+* Password reset works.
+* Session security works.
+* RBAC works.
+* Tenant isolation works.
+* Affiliate marketplace works.
+* Partner registration destinations work.
+* Real partner connections work where authorized.
+* Affiliate links can be imported.
+* Tracking redirects work.
+* Clicks are recorded.
+* Conversions are reconciled.
+* Commissions are verified.
+* Campaign generation works.
+* Landing pages work.
+* Assets are generated and stored.
+* Social authorization works.
+* Authorized publishing works.
+* AI provider requests work.
+* Agent orchestration works.
+* Parallel execution works.
+* Persistent memory works.
+* Attachments upload securely.
+* Attachments download securely.
+* Version history works.
+* Permissions work.
+* Search works.
+* Billing works.
+* Admin controls work.
+* Compliance restrictions work.
+* CI/CD works.
+* Backups and restoration work.
+* Monitoring works.
+* Critical automated tests pass.
+* External deployment is independently verified.
+* All applicable production gates pass.
+
+Maintain:
+
+docs/MASTER_INVENTORY.md
+docs/PRODUCTION_EVIDENCE.md
+docs/IMPLEMENTATION_STATUS.md
+docs/KNOWN_LIMITATIONS.md
+docs/SECURITY_ASSESSMENT.md
+
+Set:
+
+productionReady = false
+
+until every mandatory gate has passed.
+
+Do not represent blocked integrations as completed.
+
+21. FINAL COMMAND
+
+BEGIN IMPLEMENTATION NOW.
+
+First inspect the complete existing repository and produce the actual implementation inventory.
+
+Then execute INCREMENT 1.
+
+Do not rewrite the entire application unnecessarily.
+
+Do not destroy existing working features.
+
+Do not generate disconnected demonstration screens.
+
+Do not substitute documentation for executable implementation.
+
+Build real UI, real API routes, real services, real database migrations, real provider integrations, real workers, real attachment storage, real authentication, real authorization and real tests.
+
+After each increment:
+
+* Build.
+* Test.
+* Execute.
+* Verify.
+* Record evidence.
+* Update implementation status.
+* Continue to the next increment.
+
+The objective is a fully integrated, secure, scalable, enterprise-grade affiliate marketing operating system with autonomous AI execution and enterprise attachment management.
+
+FINAL PRODUCT: SUPER AFFILIATE MANAGER AI — ENTERPRISE ELITE.
+
+NOTHING IS REAL UNTIL EXECUTED AND VERIFIED EXTERNALLY.
