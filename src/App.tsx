@@ -126,6 +126,10 @@ export default function App() {
     } catch {
       // Fallback
     }
+    const isNewAdmin = newUser.isAdmin || newUser.email === 'gxqstudio@gmail.com';
+    if (!isNewAdmin && (activeTab === 'dashboard-admin' || activeTab === 'admin-console' || activeTab === 'fraud-detection')) {
+      setActiveTab(`dashboard-${newUser.role}` as NavigationTab);
+    }
   };
 
   const handleSafeNavigate = (tab: NavigationTab) => {
@@ -309,7 +313,10 @@ export default function App() {
           )}
 
           {activeTab === 'admin-console' && (
-            <AdminConsole />
+            <AdminConsole 
+              currentUser={currentUser}
+              onNavigate={handleSafeNavigate}
+            />
           )}
 
           {/* V1.2.0 Growth & Commerce Engine Views */}

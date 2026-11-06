@@ -704,6 +704,239 @@ export const AdminDashboard: React.FC<{
           </div>
         </div>
       </div>
+
+      {/* Live User Roles & Permissions Governance (Admin Exclusive) */}
+      <AdminUserPermissionsGovernance />
+    </div>
+  );
+};
+
+// Sub-component for Admin User Permissions Governance
+const AdminUserPermissionsGovernance: React.FC = () => {
+  const [users, setUsers] = useState<any[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [feedback, setFeedback] = useState<string | null>(null);
+
+  const loadUsers = async () => {
+    setLoading(true);
+    try {
+      const res = await fetch('/api/v1/admin/users-permissions');
+      const data = await res.json();
+      if (data.success) {
+        setUsers(data.data);
+      }
+    } catch {
+      // offline fallback
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  React.useEffect(() => {
+    loadUsers();
+  }, []);
+
+  const handleRoleChange = async (userId: string, newRole: 'marketing' | 'affiliate' | 'developer') => {
+    try {
+      const res = await fetch(`/api/v1/admin/users-permissions/${userId}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ role: newRole })
+      });
+      const data = await res.json();
+      if (data.success) {
+        setFeedback(`Assigned ${newRole.toUpperCase()} role and updated dedicated workspace.`);
+        loadUsers();
+      } else {
+        setFeedback(data.error || 'Update failed');
+      }
+    } catch {
+      setFeedback('Error updating role');
+    }
+    setTimeout(() => setFeedback(null), 3500);
+  };
+
+  const handleTogglePerm = async (userId: string, currentPerms: any, permKey: string) => {
+    try {
+      const updated = { ...currentPerms, [permKey]: !currentPerms[permKey] };
+      const res = await fetch(`/api/v1/admin/users-permissions/${userId}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ permissions: updated })
+      });
+      const data = await res.json();
+      if (data.success) {
+        setFeedback(`Updated ${permKey} permission.`);
+        loadUsers();
+      }
+    } catch {
+      setFeedback('Error saving permission');
+    }
+    setTimeout(() => setFeedback(null), 3500);
+  };
+
+  return (
+    <div className="p-6 sm:p-8 rounded-3xl flash-glow-card border border-white/10 space-y-6">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <div className="flex items-center gap-2">
+            <span className="text-[11px] font-mono tracking-widest text-red-400 uppercase font-bold flex items-center gap-1.5">
+              <Users className="w-3.5 h-3.5" />
+              RBAC DIRECTORY & WORKSPACE ISOLATION
+            </span>
+          </div>
+          <h2 className="text-xl sm:text-2xl font-bold text-white mt-1">
+            User Roles & Permissions Governance
+          </h2>
+          <p className="text-xs sm:text-sm text-slate-300">
+            Control access across all user types. Every registered user is isolated to their dedicated dashboard and navigation tools. Admin access is strictly locked to <strong className="text-yellow-400 font-mono">gxqstudio@gmail.com</strong>.
+          </p>
+        </div>
+
+        <button
+          onClick={loadUsers}
+          disabled={loading}
+          className="px-4 py-2 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] border border-white/10 text-xs font-mono text-slate-200 flex items-center gap-2 cursor-pointer self-start sm:self-auto"
+        >
+          <RefreshCw className={`w-3.5 h-3.5 ${loading ? 'animate-spin' : ''}`} />
+          <span>Refresh Directory</span>
+        </button>
+      </div>
+
+      {feedback && (
+        <div className="p-3 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-xs text-emerald-300 font-mono flex items-center gap-2 animate-fadeIn">
+          <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+          <span>{feedback}</span>
+        </div>
+      )}
+
+      {/* Responsive User Table */}
+      <div className="overflow-x-auto rounded-2xl border border-white/10">
+        <table className="w-full text-left text-xs text-slate-200">
+          <thead className="bg-white/[0.03] text-[10px] uppercase font-mono tracking-wider text-slate-400 border-b border-white/10">
+            <tr>
+              <th className="py-3 px-4">User / Google Identity</th>
+              <th className="py-3 px-4">Assigned Role</th>
+              <th className="py-3 px-4">Isolated Dashboard</th>
+              <th className="py-3 px-4">Granular Permissions</th>
+              <th className="py-3 px-4 text-right">Role Governance</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-white/5 font-sans">
+            {users.map((u) => {
+              const isSuper = u.email === 'gxqstudio@gmail.com';
+              return (
+                <tr key={u.id} className="hover:bg-white/[0.02] transition-colors">
+                  <td className="py-3 px-4">
+                    <div className="flex items-center gap-2.5">
+                      <img 
+                        src={u.avatarUrl || 'https://lh3.googleusercontent.com/a/default-user'} 
+                        alt={u.name}
+                        className="w-8 h-8 rounded-full border border-white/10 bg-black/40"
+                      />
+                      <div>
+                        <div className="font-semibold text-white flex items-center gap-1.5">
+                          <span>{u.name}</span>
+                          {isSuper && (
+                            <span className="text-[9px] font-mono px-1.5 py-0.2 rounded bg-red-500/20 text-red-300 border border-red-500/40">
+                              SUPERADMIN
+                            </span>
+                          )}
+                        </div>
+                        <div className="text-[11px] font-mono text-slate-400">{u.email}</div>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td className="py-3 px-4">
+                    <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider ${
+                      u.role === 'admin' 
+                        ? 'bg-red-500/20 text-red-300 border border-red-500/40'
+                        : u.role === 'marketing'
+                        ? 'bg-purple-500/20 text-purple-300 border border-purple-500/40'
+                        : u.role === 'developer'
+                        ? 'bg-cyan-500/20 text-cyan-300 border border-cyan-500/40'
+                        : 'bg-yellow-500/20 text-yellow-300 border border-yellow-500/40'
+                    }`}>
+                      {u.role}
+                    </span>
+                  </td>
+
+                  <td className="py-3 px-4">
+                    <span className="font-mono text-[11px] text-slate-300 bg-black/30 px-2 py-1 rounded border border-white/5">
+                      {u.chosenDashboard || `dashboard-${u.role}`}
+                    </span>
+                  </td>
+
+                  <td className="py-3 px-4">
+                    <div className="flex flex-wrap gap-1.5 max-w-xs">
+                      {isSuper ? (
+                        <span className="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/30">
+                          ALL PERMISSIONS UNLOCKED
+                        </span>
+                      ) : (
+                        <>
+                          <button
+                            onClick={() => handleTogglePerm(u.id, u.permissions, 'canPublishCampaigns')}
+                            className={`text-[9px] font-mono px-1.5 py-0.5 rounded border transition-colors cursor-pointer ${
+                              u.permissions?.canPublishCampaigns 
+                                ? 'bg-purple-500/20 text-purple-300 border-purple-500/40'
+                                : 'bg-white/5 text-slate-500 border-white/10'
+                            }`}
+                            title="Toggle Campaign Publishing"
+                          >
+                            Campaigns: {u.permissions?.canPublishCampaigns ? 'YES' : 'NO'}
+                          </button>
+                          <button
+                            onClick={() => handleTogglePerm(u.id, u.permissions, 'canApprovePayouts')}
+                            className={`text-[9px] font-mono px-1.5 py-0.5 rounded border transition-colors cursor-pointer ${
+                              u.permissions?.canApprovePayouts 
+                                ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40'
+                                : 'bg-white/5 text-slate-500 border-white/10'
+                            }`}
+                            title="Toggle Payout Approval"
+                          >
+                            Payouts: {u.permissions?.canApprovePayouts ? 'YES' : 'NO'}
+                          </button>
+                          <button
+                            onClick={() => handleTogglePerm(u.id, u.permissions, 'canAccessApi')}
+                            className={`text-[9px] font-mono px-1.5 py-0.5 rounded border transition-colors cursor-pointer ${
+                              u.permissions?.canAccessApi 
+                                ? 'bg-cyan-500/20 text-cyan-300 border-cyan-500/40'
+                                : 'bg-white/5 text-slate-500 border-white/10'
+                            }`}
+                            title="Toggle API Access"
+                          >
+                            API: {u.permissions?.canAccessApi ? 'YES' : 'NO'}
+                          </button>
+                        </>
+                      )}
+                    </div>
+                  </td>
+
+                  <td className="py-3 px-4 text-right">
+                    {isSuper ? (
+                      <span className="text-[10px] font-mono text-slate-500 italic">
+                        Immutable Super Admin
+                      </span>
+                    ) : (
+                      <select
+                        value={u.role}
+                        onChange={(e) => handleRoleChange(u.id, e.target.value as any)}
+                        className="bg-black/60 border border-white/20 rounded-xl px-2.5 py-1 text-xs text-slate-200 font-mono focus:border-purple-500 outline-none cursor-pointer"
+                      >
+                        <option value="affiliate">Affiliate Role</option>
+                        <option value="marketing">Marketing Role</option>
+                        <option value="developer">Developer Role</option>
+                      </select>
+                    )}
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

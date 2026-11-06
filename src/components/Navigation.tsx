@@ -284,6 +284,19 @@ export const Navigation: React.FC<NavigationProps> = ({
     ? devOperationalGroups
     : affiliateOperationalGroups;
 
+  // STRICT SECURITY & DASHBOARD ISOLATION:
+  // Admin Dashboard is strictly visible ONLY for gxqstudio@gmail.com.
+  // Each other role only sees their own dedicated dashboard.
+  const visibleRoleDashboardItems = roleDashboardItems.filter((dash) => {
+    if (dash.id === 'dashboard-admin') {
+      return isAdmin;
+    }
+    if (isAdmin) return true;
+    if (userRole === 'marketing') return dash.id === 'dashboard-marketing';
+    if (userRole === 'developer') return dash.id === 'dashboard-dev';
+    return dash.id === 'dashboard-affiliate';
+  });
+
   // Active Bottom Tab Bar items on Mobile based on user role
   const getMobileBottomTabs = () => {
     if (isAdmin) {
@@ -377,9 +390,9 @@ export const Navigation: React.FC<NavigationProps> = ({
           )}
         </div>
 
-        {/* 4 Role Dashboard Buttons */}
+        {/* Role Dashboard Buttons */}
         <div className="space-y-1 mb-4">
-          {roleDashboardItems.map((dash) => {
+          {visibleRoleDashboardItems.map((dash) => {
             const isActive = activeTab === dash.id;
             const isUserMain = (dash.id === `dashboard-${userRole}` as NavigationTab) || (isAdmin && dash.id === 'dashboard-admin');
 
@@ -575,14 +588,14 @@ export const Navigation: React.FC<NavigationProps> = ({
               </button>
             </div>
 
-            {/* Quick 4-Role Dashboard Switcher */}
+            {/* Role Dashboard Switcher */}
             <div className="space-y-1.5">
               <div className="text-[10px] font-mono text-purple-400 uppercase font-bold px-1 flex items-center justify-between">
-                <span>Role Dashboards</span>
-                <span className="text-emerald-400">4 Zones</span>
+                <span>Role Workspace</span>
+                <span className="text-emerald-400">{isAdmin ? '4 Zones' : `${userRole.toUpperCase()} Zone`}</span>
               </div>
-              <div className="grid grid-cols-2 gap-1.5">
-                {roleDashboardItems.map((dash) => (
+              <div className={`grid ${visibleRoleDashboardItems.length > 1 ? 'grid-cols-2' : 'grid-cols-1'} gap-1.5`}>
+                {visibleRoleDashboardItems.map((dash) => (
                   <button
                     key={dash.id}
                     onClick={() => { onTabChange(dash.id); setMobileMenuOpen(false); }}

@@ -87,6 +87,16 @@ echo "[TEST 12/12] Verifying V1.4.0 Baseline Preservation & Super Admin Isolatio
 ADMIN_LOGIN='{"email":"gxqstudio@gmail.com","name":"Master Admin"}'
 ADMIN_RESP=$(curl -s -X POST -H "Content-Type: application/json" -d "$ADMIN_LOGIN" http://localhost:3000/api/v1/auth/google-session)
 echo "$ADMIN_RESP" | grep -q '"isAdmin":true' || { echo "Failed: gxqstudio@gmail.com is not admin"; exit 1; }
+
+# Non-admin isolation check: user requesting admin role is rejected or demoted to non-admin
+USER_LOGIN='{"email":"marketer@example.com","name":"John Doe","role":"admin"}'
+USER_RESP=$(curl -s -X POST -H "Content-Type: application/json" -d "$USER_LOGIN" http://localhost:3000/api/v1/auth/google-session)
+echo "$USER_RESP" | grep -q '"isAdmin":false' || { echo "Failed: non-admin was incorrectly granted admin rights"; exit 1; }
+
+# Permissions directory check
+PERMS_RESP=$(curl -s http://localhost:3000/api/v1/admin/users-permissions)
+echo "$PERMS_RESP" | grep -q '"gxqstudio@gmail.com"' || { echo "Failed: Admin missing from directory"; exit 1; }
+
 # Payout Idempotency
 IDEMP_KEY="test-idemp-v15-$(date +%s)"
 PAY_REQ='{"affiliateName":"Elena Rostova","amount":150.00,"provider":"Stripe Connect","idempotencyKey":"'$IDEMP_KEY'"}'

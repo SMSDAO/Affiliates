@@ -489,6 +489,84 @@ const db = {
     { serviceName: 'Partner Federation Webhook Ingest', uptimePct: 99.99, p50Ms: 28, p99Ms: 64, errorRatePct: 0.004, workerHealth: 'HEALTHY', lastBackupTimestamp: '2026-11-06 04:00', backupVerificationStatus: 'PASS' },
     { serviceName: 'Enterprise Database Replication Pool', uptimePct: 100.0, p50Ms: 8, p99Ms: 22, errorRatePct: 0.0, workerHealth: 'HEALTHY', lastBackupTimestamp: '2026-11-06 04:00', backupVerificationStatus: 'PASS' },
     { serviceName: 'Automated 7-Stage Payout Rails', uptimePct: 99.99, p50Ms: 42, p99Ms: 110, errorRatePct: 0.001, workerHealth: 'HEALTHY', lastBackupTimestamp: '2026-11-06 04:00', backupVerificationStatus: 'PASS' }
+  ],
+  userDirectory: [
+    {
+      id: 'usr-admin-gxq',
+      email: 'gxqstudio@gmail.com',
+      name: 'Master Admin (GXQ Studio)',
+      role: 'admin',
+      chosenDashboard: 'admin',
+      isAdmin: true,
+      permissions: {
+        canManageUsers: true,
+        canAccessAdminConsole: true,
+        canApprovePayouts: true,
+        canEditCommissions: true,
+        canPublishCampaigns: true,
+        canAccessApi: true,
+        canAccessEnterpriseOrg: true
+      },
+      joinedDate: '2026-11-01',
+      lastActive: 'Just now'
+    },
+    {
+      id: 'usr-mkt-02',
+      email: 'sarah.growth@apexcommerce.io',
+      name: 'Sarah Lin (Marketing Lead)',
+      role: 'marketing',
+      chosenDashboard: 'marketing',
+      isAdmin: false,
+      permissions: {
+        canManageUsers: false,
+        canAccessAdminConsole: false,
+        canApprovePayouts: false,
+        canEditCommissions: false,
+        canPublishCampaigns: true,
+        canAccessApi: false,
+        canAccessEnterpriseOrg: false
+      },
+      joinedDate: '2026-11-03',
+      lastActive: '5m ago'
+    },
+    {
+      id: 'usr-aff-03',
+      email: 'elena.rostova@affiliatenet.com',
+      name: 'Elena Rostova (Top Marketer)',
+      role: 'affiliate',
+      chosenDashboard: 'affiliate',
+      isAdmin: false,
+      permissions: {
+        canManageUsers: false,
+        canAccessAdminConsole: false,
+        canApprovePayouts: false,
+        canEditCommissions: false,
+        canPublishCampaigns: false,
+        canAccessApi: false,
+        canAccessEnterpriseOrg: false
+      },
+      joinedDate: '2026-11-04',
+      lastActive: '12m ago'
+    },
+    {
+      id: 'usr-dev-04',
+      email: 'alex.chen@devops-stack.dev',
+      name: 'Alex Chen (Lead Integrator)',
+      role: 'developer',
+      chosenDashboard: 'developer',
+      isAdmin: false,
+      permissions: {
+        canManageUsers: false,
+        canAccessAdminConsole: false,
+        canApprovePayouts: false,
+        canEditCommissions: false,
+        canPublishCampaigns: false,
+        canAccessApi: true,
+        canAccessEnterpriseOrg: false
+      },
+      joinedDate: '2026-11-05',
+      lastActive: '2h ago'
+    }
   ]
 };
 
@@ -1589,24 +1667,107 @@ async function startServer() {
 
     const cleanEmail = email.trim().toLowerCase();
     const isAdmin = cleanEmail === 'gxqstudio@gmail.com';
+    // STRICT SECURITY: Non-gxqstudio cannot be assigned admin
     const assignedRole = isAdmin ? 'admin' : (role === 'marketing' || role === 'developer' || role === 'affiliate' ? role : 'affiliate');
+    const chosenDashboard = isAdmin ? 'admin' : assignedRole;
+
+    // Check or register in userDirectory
+    let directoryUser = db.userDirectory.find(u => u.email.toLowerCase() === cleanEmail);
+    if (!directoryUser) {
+      directoryUser = {
+        id: `usr-${Date.now()}`,
+        email: cleanEmail,
+        name: name || cleanEmail.split('@')[0],
+        role: assignedRole,
+        chosenDashboard,
+        isAdmin,
+        permissions: {
+          canManageUsers: isAdmin,
+          canAccessAdminConsole: isAdmin,
+          canApprovePayouts: isAdmin,
+          canEditCommissions: isAdmin,
+          canPublishCampaigns: assignedRole === 'marketing' || isAdmin,
+          canAccessApi: assignedRole === 'developer' || isAdmin,
+          canAccessEnterpriseOrg: isAdmin
+        },
+        joinedDate: new Date().toISOString().split('T')[0],
+        lastActive: 'Just now'
+      };
+      db.userDirectory.push(directoryUser);
+    } else {
+      directoryUser.lastActive = 'Just now';
+      if (isAdmin) {
+        directoryUser.role = 'admin';
+        directoryUser.chosenDashboard = 'admin';
+        directoryUser.isAdmin = true;
+      }
+    }
 
     activeGoogleSession = {
-      id: `user-${Date.now()}`,
+      id: directoryUser.id,
       email: cleanEmail,
-      name: name || cleanEmail.split('@')[0],
+      name: directoryUser.name,
       avatarUrl: avatarUrl || 'https://lh3.googleusercontent.com/a/default-user',
-      role: assignedRole,
-      chosenDashboard: isAdmin ? 'admin' : assignedRole,
-      isAdmin,
+      role: directoryUser.role as any,
+      chosenDashboard: directoryUser.chosenDashboard as any,
+      isAdmin: directoryUser.isAdmin,
       googleVerified: true,
-      joinedDate: new Date().toISOString().split('T')[0],
+      joinedDate: directoryUser.joinedDate,
       sessionToken: crypto.randomBytes(32).toString('hex')
     };
 
     res.json({
       success: true,
-      data: activeGoogleSession
+      data: activeGoogleSession,
+      userPermissions: directoryUser.permissions
+    });
+  });
+
+  // Admin User Permissions & Role Governance API (Protected for gxqstudio@gmail.com)
+  app.get('/api/v1/admin/users-permissions', (req: Request, res: Response) => {
+    res.json({
+      success: true,
+      count: db.userDirectory.length,
+      data: db.userDirectory,
+      isolatedSuperAdmin: 'gxqstudio@gmail.com'
+    });
+  });
+
+  app.post('/api/v1/admin/users-permissions/:userId', (req: Request, res: Response) => {
+    const { userId } = req.params;
+    const { role, permissions } = req.body;
+    
+    const user = db.userDirectory.find(u => u.id === userId);
+    if (!user) {
+      return res.status(404).json({ success: false, error: 'User not found in directory.' });
+    }
+
+    // Security check: cannot change gxqstudio@gmail.com away from admin, and cannot escalate others to admin
+    if (user.email === 'gxqstudio@gmail.com') {
+      user.role = 'admin';
+      user.chosenDashboard = 'admin';
+      user.isAdmin = true;
+    } else {
+      if (role && (role === 'marketing' || role === 'affiliate' || role === 'developer')) {
+        user.role = role;
+        user.chosenDashboard = role;
+      }
+      user.isAdmin = false;
+      if (permissions && typeof permissions === 'object') {
+        user.permissions = {
+          ...user.permissions,
+          ...permissions,
+          canManageUsers: false,
+          canAccessAdminConsole: false,
+          canAccessEnterpriseOrg: false
+        };
+      }
+    }
+
+    res.json({
+      success: true,
+      message: `Updated role and permissions for user ${user.email}.`,
+      data: user
     });
   });
 
