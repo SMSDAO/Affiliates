@@ -82,6 +82,74 @@
     -webkit-backdrop-filter: blur(18px);
     border: 1px solid rgba(255, 255, 255, 0.08);
   }
+
+  /* Cyber Futuristic Flash Rounded Glassmorphic Card */
+  .flash-glass-card {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.75) 0%, rgba(10, 15, 38, 0.85) 100%);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-radius: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.7),
+                0 0 20px -5px rgba(168, 85, 247, 0.25),
+                0 0 35px -8px rgba(249, 115, 22, 0.18);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .flash-glass-card:hover {
+    box-shadow: 0 15px 45px -5px rgba(0, 0, 0, 0.85),
+                0 0 30px -3px rgba(168, 85, 247, 0.45),
+                0 0 50px -5px rgba(249, 115, 22, 0.35),
+                0 0 65px -8px rgba(34, 197, 94, 0.25);
+    border-color: rgba(255, 255, 255, 0.28);
+  }
+
+  /* Multi-color Neon Badge */
+  .flash-badge-multi {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border-radius: 9999px;
+    background: rgba(15, 23, 42, 0.85);
+    color: #f1f5f9;
+    box-shadow: 0 0 12px rgba(168, 85, 247, 0.4);
+  }
+
+  .flash-badge-multi::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 9999px;
+    padding: 1px;
+    background: linear-gradient(90deg, #a855f7, #f97316, #ef4444, #22c55e, #eab308);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  /* Cyber Button with Multi-color Neon Edge & Glow */
+  .cyber-neon-button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    transition: all 0.25s ease;
+    border-radius: 1rem;
+    background: linear-gradient(135deg, rgba(20, 28, 58, 0.9) 0%, rgba(10, 15, 38, 0.95) 100%);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(168, 85, 247, 0.3);
+  }
+
+  .cyber-neon-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6), 0 0 25px rgba(249, 115, 22, 0.45), 0 0 35px rgba(168, 85, 247, 0.4);
+  }
 }
 
 @keyframes flashPulse {

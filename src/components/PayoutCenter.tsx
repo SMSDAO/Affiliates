@@ -86,16 +86,16 @@ export const PayoutCenter: React.FC = () => {
           <div>
             <div className="flex items-center gap-2 mb-1">
               <span className="text-[11px] font-mono tracking-widest text-purple-400 uppercase font-bold">
-                PAYOUTS & WITHDRAWAL MANAGEMENT · V1.2.0
+                PAYOUTS & WITHDRAWAL RAILS · V1.3.0 PRODUCTION
               </span>
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399]" />
-              <span className="text-[11px] font-mono text-emerald-300">DISBURSEMENT RAILS ONLINE</span>
+              <span className="text-[11px] font-mono text-emerald-300">IDEMPOTENT RAILS ACTIVE · ZERO DUPLICATE PAYOUTS</span>
             </div>
             <h1 className="text-2xl sm:text-3xl font-extrabold text-white">
               Enterprise Payout Center
             </h1>
             <p className="text-xs sm:text-sm text-slate-300 mt-1 max-w-2xl">
-              Execute tokenized payouts via Stripe Connect, PayPal Payouts, Paystack, or automated bank wires with independent read-back verification and zero stored card data.
+              Execute tokenized payouts via Stripe Connect, PayPal Payouts, Paystack, or automated bank wires with idempotency key locking, decimal-safe reconciliation, and 12-gate audit logging.
             </p>
           </div>
 
