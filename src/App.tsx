@@ -53,6 +53,17 @@ import { AgencyResellerHub } from './components/AgencyResellerHub';
 import { AutomationEngine } from './components/AutomationEngine';
 import { SecurityComplianceCenter } from './components/SecurityComplianceCenter';
 
+// V1.5.0 Global Intelligence & Autonomous Ecosystem
+import { GlobalIntelligenceEngine } from './components/GlobalIntelligenceEngine';
+import { CampaignOptimizer } from './components/CampaignOptimizer';
+import { PartnerFederationCenter } from './components/PartnerFederationCenter';
+import { FraudInvestigationCenter } from './components/FraudInvestigationCenter';
+import { EnterpriseBiDashboard } from './components/EnterpriseBiDashboard';
+import { LocalizationHub } from './components/LocalizationHub';
+import { AiAgentControlCenter } from './components/AiAgentControlCenter';
+import { ExtensionMarketplace } from './components/ExtensionMarketplace';
+import { SystemReliabilityOps } from './components/SystemReliabilityOps';
+
 // Role Dashboards & Google Auth
 import { 
   MarketingDashboard, 
@@ -406,6 +417,43 @@ export default function App() {
 
           {activeTab === 'security-compliance' && (
             <SecurityComplianceCenter />
+          )}
+
+          {/* V1.5.0 Global Intelligence & Autonomous Ecosystem */}
+          {activeTab === 'global-intelligence' && (
+            <GlobalIntelligenceEngine />
+          )}
+
+          {activeTab === 'campaign-optimizer' && (
+            <CampaignOptimizer />
+          )}
+
+          {activeTab === 'partner-federation' && (
+            <PartnerFederationCenter />
+          )}
+
+          {activeTab === 'fraud-investigation' && (
+            <FraudInvestigationCenter />
+          )}
+
+          {activeTab === 'enterprise-bi' && (
+            <EnterpriseBiDashboard />
+          )}
+
+          {activeTab === 'localization-hub' && (
+            <LocalizationHub />
+          )}
+
+          {activeTab === 'ai-agent-control' && (
+            <AiAgentControlCenter />
+          )}
+
+          {activeTab === 'extension-marketplace' && (
+            <ExtensionMarketplace />
+          )}
+
+          {activeTab === 'system-reliability' && (
+            <SystemReliabilityOps />
           )}
         </main>
       </div>

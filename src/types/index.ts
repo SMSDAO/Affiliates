@@ -35,7 +35,17 @@ export type NavigationTab =
   | 'white-label'
   | 'agency-reseller'
   | 'automation-engine'
-  | 'security-compliance';
+  | 'security-compliance'
+  // V1.5.0 Global Intelligence & Autonomous Ecosystem
+  | 'global-intelligence'
+  | 'campaign-optimizer'
+  | 'partner-federation'
+  | 'fraud-investigation'
+  | 'enterprise-bi'
+  | 'localization-hub'
+  | 'ai-agent-control'
+  | 'extension-marketplace'
+  | 'system-reliability';
 
 export type UserRole = 'admin' | 'marketing' | 'affiliate' | 'developer';
 export type ExperienceMode = 'personal' | 'business' | 'agency' | 'enterprise';
@@ -498,3 +508,130 @@ export interface SupportTicketRecord {
   assignedAgent: string;
   createdAt: string;
 }
+
+// V1.5.0 Global Intelligence & Autonomous Growth Ecosystem Interfaces
+
+export interface IntelligenceInsight {
+  id: string;
+  type: 'high-performer' | 'declining-conversion' | 'underperforming-product' | 'traffic-quality-anomaly' | 'commission-opportunity';
+  title: string;
+  description: string;
+  campaignOrProduct: string;
+  network: string;
+  metricName: string;
+  actualValue: string;
+  estimatedPotential: string;
+  confidenceScore: number;
+  recommendation: string;
+  impactLevel: 'critical' | 'high' | 'medium' | 'low';
+  category: string;
+  createdAt: string;
+}
+
+export interface AutonomousAgentDefinition {
+  id: string;
+  name: string;
+  role: string;
+  category: 'Intelligence' | 'Optimization' | 'Growth' | 'Compliance';
+  status: 'active' | 'evaluating' | 'idle' | 'awaiting-approval';
+  modelTarget: string;
+  lastAction: string;
+  tasksCompleted: number;
+  accuracyRating: number;
+  requiresApproval: boolean;
+}
+
+export interface PartnerFederationAdapter {
+  id: string;
+  networkKey: 'cj' | 'impact' | 'awin' | 'rakuten' | 'partnerstack' | 'clickbank' | 'shareasale' | 'flexoffers' | 'amazon' | 'ebay' | 'custom';
+  name: string;
+  authType: 'OAUTH2' | 'API_KEY' | 'S3_FEED' | 'MANUAL_IMPORT';
+  approvalStatus: 'VERIFIED_ACTIVE' | 'APPLICATION_PENDING' | 'REAUTHORIZATION_REQUIRED' | 'ELIGIBLE_TO_APPLY';
+  connectionHealth: 'OPTIMAL' | 'DEGRADED' | 'DISCONNECTED';
+  lastSyncTimestamp: string;
+  productsSyncedCount: number;
+  conversionsImportedCount: number;
+  activeCommissionTerms: string;
+  credentialRotationDaysRemaining: number;
+  portalUrl: string;
+}
+
+export interface FraudInvestigationCase {
+  id: string;
+  caseNumber: string;
+  affiliateId: string;
+  affiliateName: string;
+  riskScore: number; // 0.00 - 1.00
+  riskLevel: 'CRITICAL' | 'HIGH' | 'ELEVATED' | 'LOW';
+  primaryVector: 'COOKIE_STUFFING' | 'CLICK_MANIPULATION' | 'DUPLICATE_CONVERSIONS' | 'SELF_REFERRAL' | 'BOT_VELOCITY';
+  evidenceSummary: string;
+  flaggedAmount: number;
+  isHoldReversible: boolean;
+  status: 'UNDER_REVIEW' | 'HOLD_APPLIED' | 'CLEARED_FALSE_POSITIVE' | 'CONFISCATED_ESCALATED';
+  assignedInvestigator: string;
+  openedAt: string;
+  history: { timestamp: string; action: string; actor: string }[];
+}
+
+export interface BiCohortData {
+  cohortMonth: string;
+  newAffiliatesCount: number;
+  m1Retained: number;
+  m3Retained: number;
+  m6Retained: number;
+  avgLtvUSD: number;
+  refundRatePct: number;
+  grossSalesUSD: number;
+  netSalesUSD: number;
+  commissionsPaidUSD: number;
+  commissionsPendingUSD: number;
+}
+
+export interface MarketLocalizationConfig {
+  locale: string;
+  languageName: string;
+  direction: 'ltr' | 'rtl';
+  currency: string;
+  timeZone: string;
+  taxRatePct: number;
+  vatGstApplicable: boolean;
+  regionalComplianceTerms: string;
+  activeCampaignsCount: number;
+}
+
+export interface AgentControlModel {
+  providerId: 'gemini' | 'openai' | 'anthropic' | 'deepseek';
+  providerName: string;
+  modelAlias: string;
+  status: 'ONLINE' | 'STANDBY' | 'DEGRADED';
+  monthlyTokensUsed: number;
+  monthlyBudgetUSD: number;
+  currentSpendUSD: number;
+  p95LatencyMs: number;
+  circuitBreakerState: 'CLOSED' | 'HALF_OPEN' | 'OPEN';
+}
+
+export interface ExtensionPlugin {
+  id: string;
+  name: string;
+  version: string;
+  category: 'ADAPTER' | 'CAMPAIGN_TEMPLATE' | 'BI_REPORTER' | 'ECOMMERCE' | 'WORKFLOW';
+  developer: string;
+  installStatus: 'INSTALLED' | 'AVAILABLE' | 'UPDATE_AVAILABLE';
+  permissionScopes: string[];
+  sandboxed: boolean;
+  webhookSubscriptions: string[];
+  lastAuditDate: string;
+}
+
+export interface ReliabilityMetric {
+  serviceName: string;
+  uptimePct: number;
+  p50Ms: number;
+  p99Ms: number;
+  errorRatePct: number;
+  workerHealth: 'HEALTHY' | 'WARNING' | 'FAILED';
+  lastBackupTimestamp: string;
+  backupVerificationStatus: 'PASS' | 'PENDING';
+}
+

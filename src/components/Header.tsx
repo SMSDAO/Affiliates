@@ -32,7 +32,9 @@ import {
   Building2,
   Palette,
   Briefcase,
-  Workflow
+  Workflow,
+  Brain,
+  Network
 } from 'lucide-react';
 import { NavigationTab, WorkspaceMode, LocaleCode, GoogleUserProfile } from '../types';
 
@@ -255,6 +257,28 @@ export const Header: React.FC<HeaderProps> = ({
               >
                 <Workflow className="w-3.5 h-3.5 text-emerald-400" />
                 <span>Automate</span>
+              </button>
+
+              <button
+                onClick={() => onNavigate('global-intelligence')}
+                className={`flex items-center gap-1.5 px-2 py-1 rounded-xl transition-all font-semibold ${
+                  activeTab === 'global-intelligence' ? 'bg-purple-600/30 text-purple-200 border border-purple-500/50' : 'text-slate-400 hover:text-white'
+                }`}
+                title="Global Affiliate Intelligence & Yield Telemetry"
+              >
+                <Brain className="w-3.5 h-3.5 text-purple-400" />
+                <span>Intel</span>
+              </button>
+
+              <button
+                onClick={() => onNavigate('partner-federation')}
+                className={`flex items-center gap-1.5 px-2 py-1 rounded-xl transition-all font-semibold ${
+                  activeTab === 'partner-federation' ? 'bg-indigo-600/30 text-indigo-200 border border-indigo-500/50' : 'text-slate-400 hover:text-white'
+                }`}
+                title="10+ Network Partner Federation"
+              >
+                <Network className="w-3.5 h-3.5 text-indigo-400" />
+                <span>Federation</span>
               </button>
             </>
           ) : userRole === 'marketing' ? (

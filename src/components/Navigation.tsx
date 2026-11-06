@@ -41,7 +41,14 @@ import {
   ExternalLink,
   Building2,
   Briefcase,
-  Workflow
+  Workflow,
+  Brain,
+  Network,
+  Puzzle,
+  Sliders,
+  BarChart3,
+  Globe2,
+  Server
 } from 'lucide-react';
 import { NavigationTab, WorkspaceMode, GoogleUserProfile } from '../types';
 
@@ -166,6 +173,20 @@ export const Navigation: React.FC<NavigationProps> = ({
         { id: 'agency-reseller' as NavigationTab, label: 'AGENCY & RESELLERS', icon: <Briefcase className="w-4 h-4 text-orange-400" />, badge: 'CLIENTS' },
         { id: 'automation-engine' as NavigationTab, label: 'EVENT WORKFLOWS', icon: <Workflow className="w-4 h-4 text-emerald-400" />, badge: 'RULES' },
         { id: 'security-compliance' as NavigationTab, label: 'SECURITY & GOVERNANCE', icon: <ShieldCheck className="w-4 h-4 text-amber-400" />, badge: 'SSO/SCIM' }
+      ]
+    },
+    {
+      groupTitle: 'V1.5.0 Global Intelligence & Autonomous Ecosystem',
+      items: [
+        { id: 'global-intelligence' as NavigationTab, label: 'GLOBAL INTELLIGENCE', icon: <Brain className="w-4 h-4 text-purple-400" />, badge: 'TELEMETRY' },
+        { id: 'campaign-optimizer' as NavigationTab, label: 'AUTONOMOUS OPTIMIZER', icon: <Bot className="w-4 h-4 text-cyan-400" />, badge: '9 AGENTS' },
+        { id: 'partner-federation' as NavigationTab, label: 'PARTNER FEDERATION', icon: <Network className="w-4 h-4 text-indigo-400" />, badge: '10 NETWORKS' },
+        { id: 'fraud-investigation' as NavigationTab, label: 'FRAUD & RISK CASES', icon: <ShieldAlert className="w-4 h-4 text-red-400" />, badge: 'HOLDS' },
+        { id: 'enterprise-bi' as NavigationTab, label: 'ENTERPRISE BI & LTV', icon: <BarChart3 className="w-4 h-4 text-emerald-400" />, badge: 'LEDGER' },
+        { id: 'localization-hub' as NavigationTab, label: 'GLOBAL LOCALIZATION', icon: <Globe2 className="w-4 h-4 text-blue-400" />, badge: 'RTL/TAX' },
+        { id: 'ai-agent-control' as NavigationTab, label: 'AI CONTROL CENTER', icon: <Sliders className="w-4 h-4 text-pink-400" />, badge: 'CAPS' },
+        { id: 'extension-marketplace' as NavigationTab, label: 'PLUGIN MARKETPLACE', icon: <Puzzle className="w-4 h-4 text-teal-400" />, badge: 'STORE' },
+        { id: 'system-reliability' as NavigationTab, label: 'RELIABILITY & DR OPS', icon: <Server className="w-4 h-4 text-amber-400" />, badge: 'P99/SLA' }
       ]
     },
     {
