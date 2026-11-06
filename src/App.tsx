@@ -36,7 +36,7 @@ import { DeveloperDocumentation } from './components/DeveloperDocumentation';
 import { FunnelAnalytics } from './components/FunnelAnalytics';
 import { LegalTrustPages } from './components/LegalTrustPages';
 
-// V1.2.0 Additions
+// V1.2.0 & V1.3.0 Additions
 import { AffiliateRegistration } from './components/AffiliateRegistration';
 import { AffiliatePortal } from './components/AffiliatePortal';
 import { MlmCommissionEngine } from './components/MlmCommissionEngine';
@@ -45,6 +45,13 @@ import { WordPressEmbeds } from './components/WordPressEmbeds';
 import { PayoutCenter } from './components/PayoutCenter';
 import { FraudDetectionCenter } from './components/FraudDetectionCenter';
 import { CasinoAffiliateModule } from './components/CasinoAffiliateModule';
+
+// V1.4.0 Ultimate Enterprise Suite
+import { EnterpriseOrgManager } from './components/EnterpriseOrgManager';
+import { WhiteLabelPortal } from './components/WhiteLabelPortal';
+import { AgencyResellerHub } from './components/AgencyResellerHub';
+import { AutomationEngine } from './components/AutomationEngine';
+import { SecurityComplianceCenter } from './components/SecurityComplianceCenter';
 
 // Role Dashboards & Google Auth
 import { 
@@ -378,6 +385,27 @@ export default function App() {
             <LegalTrustPages
               onNavigate={handleSafeNavigate}
             />
+          )}
+
+          {/* V1.4.0 Ultimate Enterprise Suite */}
+          {activeTab === 'enterprise-org' && (
+            <EnterpriseOrgManager onNavigate={handleSafeNavigate} />
+          )}
+
+          {activeTab === 'white-label' && (
+            <WhiteLabelPortal />
+          )}
+
+          {activeTab === 'agency-reseller' && (
+            <AgencyResellerHub />
+          )}
+
+          {activeTab === 'automation-engine' && (
+            <AutomationEngine />
+          )}
+
+          {activeTab === 'security-compliance' && (
+            <SecurityComplianceCenter />
           )}
         </main>
       </div>

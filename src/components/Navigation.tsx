@@ -38,7 +38,10 @@ import {
   Zap,
   Layers,
   ArrowRight,
-  ExternalLink
+  ExternalLink,
+  Building2,
+  Briefcase,
+  Workflow
 } from 'lucide-react';
 import { NavigationTab, WorkspaceMode, GoogleUserProfile } from '../types';
 
@@ -153,6 +156,16 @@ export const Navigation: React.FC<NavigationProps> = ({
         { id: 'attachments' as NavigationTab, label: 'ATTACHMENT VAULT', icon: <FileBox className="w-4 h-4 text-slate-300" /> },
         { id: 'agent-registry' as NavigationTab, label: 'AGENT ORCHESTRATION', icon: <Cpu className="w-4 h-4 text-violet-400" /> },
         { id: 'admin-console' as NavigationTab, label: 'SETTINGS & ADMIN', icon: <Settings className="w-4 h-4 text-red-400" />, badge: 'SUPER' }
+      ]
+    },
+    {
+      groupTitle: 'V1.4.0 Ultimate Enterprise Suite',
+      items: [
+        { id: 'enterprise-org' as NavigationTab, label: 'ORGANIZATION HIERARCHY', icon: <Building2 className="w-4 h-4 text-purple-400" />, badge: 'TENANT' },
+        { id: 'white-label' as NavigationTab, label: 'WHITE-LABEL & DOMAINS', icon: <Palette className="w-4 h-4 text-cyan-400" />, badge: 'CUSTOM' },
+        { id: 'agency-reseller' as NavigationTab, label: 'AGENCY & RESELLERS', icon: <Briefcase className="w-4 h-4 text-orange-400" />, badge: 'CLIENTS' },
+        { id: 'automation-engine' as NavigationTab, label: 'EVENT WORKFLOWS', icon: <Workflow className="w-4 h-4 text-emerald-400" />, badge: 'RULES' },
+        { id: 'security-compliance' as NavigationTab, label: 'SECURITY & GOVERNANCE', icon: <ShieldCheck className="w-4 h-4 text-amber-400" />, badge: 'SSO/SCIM' }
       ]
     },
     {

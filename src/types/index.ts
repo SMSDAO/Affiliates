@@ -29,9 +29,16 @@ export type NavigationTab =
   | 'dashboard-marketing'
   | 'dashboard-affiliate'
   | 'dashboard-dev'
-  | 'dashboard-admin';
+  | 'dashboard-admin'
+  // V1.4.0 Ultimate Enterprise Modules
+  | 'enterprise-org'
+  | 'white-label'
+  | 'agency-reseller'
+  | 'automation-engine'
+  | 'security-compliance';
 
 export type UserRole = 'admin' | 'marketing' | 'affiliate' | 'developer';
+export type ExperienceMode = 'personal' | 'business' | 'agency' | 'enterprise';
 
 export interface GoogleUserProfile {
   id: string;
@@ -43,6 +50,8 @@ export interface GoogleUserProfile {
   isAdmin: boolean;
   googleVerified: boolean;
   joinedDate: string;
+  activeOrgId?: string;
+  activeExperienceMode?: ExperienceMode;
 }
 
 export type WorkspaceMode = 'beginner' | 'affiliate' | 'merchant';
@@ -342,4 +351,150 @@ export interface SocialPost {
   likes: number;
   clicks: number;
   disclosuresIncluded: boolean;
+}
+
+// V1.4.0 Ultimate Enterprise Entities
+
+export interface OrganizationHierarchy {
+  id: string;
+  name: string;
+  tier: 'Enterprise' | 'Agency' | 'White Label';
+  primaryCurrency: string;
+  supportedCurrencies: string[];
+  activeRegions: string[];
+  businessUnits: BusinessUnit[];
+  brands: BrandEntity[];
+  stores: StoreEntity[];
+  programs: AffiliateProgramEntity[];
+  totalAffiliates: number;
+  monthlyGmv: number;
+  customDomain?: string;
+  createdAt: string;
+}
+
+export interface BusinessUnit {
+  id: string;
+  orgId: string;
+  name: string;
+  code: string;
+  leadAdmin: string;
+  allocatedBudget: number;
+  brandsCount: number;
+  status: 'ACTIVE' | 'ARCHIVED';
+}
+
+export interface BrandEntity {
+  id: string;
+  orgId: string;
+  unitId: string;
+  name: string;
+  niche: string;
+  logoUrl?: string;
+  primaryColor: string;
+  activeProgramsCount: number;
+  status: 'ACTIVE' | 'MAINTENANCE';
+}
+
+export interface StoreEntity {
+  id: string;
+  orgId: string;
+  brandId: string;
+  name: string;
+  platform: 'WooCommerce' | 'Shopify' | 'EDD' | 'Custom API';
+  storeUrl: string;
+  currency: string;
+  syncedProductsCount: number;
+  healthStatus: 'HEALTHY' | 'SYNCING' | 'ERROR';
+}
+
+export interface AffiliateProgramEntity {
+  id: string;
+  orgId: string;
+  brandId: string;
+  name: string;
+  commissionType: 'RevShare' | 'CPA' | 'Hybrid';
+  defaultRate: string;
+  activeAffiliatesCount: number;
+  autoApprove: boolean;
+  approvalWorkflowRequired: boolean;
+}
+
+export interface WhiteLabelConfig {
+  orgId: string;
+  brandName: string;
+  customDomain: string;
+  dnsVerified: boolean;
+  sslStatus: 'ACTIVE' | 'PENDING' | 'RENEWAL_REQUIRED';
+  primaryColor: string;
+  accentColor: string;
+  logoUrl: string;
+  faviconUrl?: string;
+  supportEmail: string;
+  portalTitle: string;
+  customTermsUrl?: string;
+  customPrivacyUrl?: string;
+}
+
+export interface AgencyClient {
+  id: string;
+  agencyId: string;
+  name: string;
+  domain: string;
+  accountManager: string;
+  programsCount: number;
+  monthlySpend: number;
+  commissionRevenue: number;
+  status: 'ACTIVE' | 'ONBOARDING' | 'PAUSED';
+  planTier: 'Growth' | 'Scale' | 'Enterprise';
+  joinedDate: string;
+}
+
+export interface ApprovalRequest {
+  id: string;
+  orgId: string;
+  type: 'CAMPAIGN_PUBLISH' | 'PAYOUT_DISBURSE' | 'COMMISSION_ADJUSTMENT' | 'PARTNER_TERMS';
+  title: string;
+  submittedBy: string;
+  submittedAt: string;
+  amount?: number;
+  currency?: string;
+  status: 'PENDING_REVIEW' | 'APPROVED' | 'REJECTED' | 'ESCALATED';
+  riskScore: 'LOW' | 'MEDIUM' | 'HIGH';
+  assignedApprover: string;
+  notes?: string;
+}
+
+export interface WorkflowRule {
+  id: string;
+  orgId: string;
+  name: string;
+  triggerEvent: 'NEW_AFFILIATE' | 'FIRST_SALE' | 'COMMISSION_APPROVED' | 'RANK_UPGRADE' | 'FRAUD_ALERT' | 'LINK_BROKEN';
+  actionType: 'SEND_NOTIFICATION' | 'CREATE_TASK' | 'REQUEST_APPROVAL' | 'PAUSE_CAMPAIGN' | 'TRIGGER_WEBHOOK';
+  conditionSummary: string;
+  active: boolean;
+  executionCount: number;
+  lastExecutedAt?: string;
+}
+
+export interface SecurityIncidentRecord {
+  id: string;
+  orgId: string;
+  severity: 'CRITICAL' | 'HIGH' | 'MEDIUM' | 'LOW';
+  category: 'AUTH_ANOMALY' | 'UNAUTHORIZED_CROSS_TENANT' | 'RATE_LIMIT_EXCEEDED' | 'WEBHOOK_SIGNATURE_FAIL';
+  description: string;
+  ipAddress: string;
+  mitigated: boolean;
+  timestamp: string;
+}
+
+export interface SupportTicketRecord {
+  id: string;
+  orgId: string;
+  affiliateEmail: string;
+  subject: string;
+  category: 'Commissions' | 'Tracking Links' | 'Payouts' | 'API Integration';
+  priority: 'Urgent' | 'High' | 'Normal';
+  status: 'OPEN' | 'IN_PROGRESS' | 'RESOLVED';
+  assignedAgent: string;
+  createdAt: string;
 }

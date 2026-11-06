@@ -28,7 +28,11 @@ import {
   Share2,
   Link2,
   Store,
-  ShoppingBag
+  ShoppingBag,
+  Building2,
+  Palette,
+  Briefcase,
+  Workflow
 } from 'lucide-react';
 import { NavigationTab, WorkspaceMode, LocaleCode, GoogleUserProfile } from '../types';
 
@@ -204,6 +208,53 @@ export const Header: React.FC<HeaderProps> = ({
               >
                 <ShieldCheck className="w-3.5 h-3.5 text-red-400" />
                 <span>Admin</span>
+              </button>
+
+              <span className="text-white/20">|</span>
+
+              {/* V1.4.0 Enterprise Extensions */}
+              <button
+                onClick={() => onNavigate('enterprise-org')}
+                className={`flex items-center gap-1.5 px-2 py-1 rounded-xl transition-all font-semibold ${
+                  activeTab === 'enterprise-org' ? 'bg-purple-600/30 text-purple-200 border border-purple-500/50' : 'text-slate-400 hover:text-white'
+                }`}
+                title="Enterprise Multi-Tenant Hierarchy"
+              >
+                <Building2 className="w-3.5 h-3.5 text-purple-400" />
+                <span>Org</span>
+              </button>
+
+              <button
+                onClick={() => onNavigate('white-label')}
+                className={`flex items-center gap-1.5 px-2 py-1 rounded-xl transition-all font-semibold ${
+                  activeTab === 'white-label' ? 'bg-cyan-600/30 text-cyan-200 border border-cyan-500/50' : 'text-slate-400 hover:text-white'
+                }`}
+                title="White-Label SaaS & Custom Domains"
+              >
+                <Palette className="w-3.5 h-3.5 text-cyan-400" />
+                <span>White-Label</span>
+              </button>
+
+              <button
+                onClick={() => onNavigate('agency-reseller')}
+                className={`flex items-center gap-1.5 px-2 py-1 rounded-xl transition-all font-semibold ${
+                  activeTab === 'agency-reseller' ? 'bg-orange-600/30 text-orange-200 border border-orange-500/50' : 'text-slate-400 hover:text-white'
+                }`}
+                title="Agency & Reseller Workspaces"
+              >
+                <Briefcase className="w-3.5 h-3.5 text-orange-400" />
+                <span>Agency</span>
+              </button>
+
+              <button
+                onClick={() => onNavigate('automation-engine')}
+                className={`flex items-center gap-1.5 px-2 py-1 rounded-xl transition-all font-semibold ${
+                  activeTab === 'automation-engine' ? 'bg-emerald-600/30 text-emerald-200 border border-emerald-500/50' : 'text-slate-400 hover:text-white'
+                }`}
+                title="Workflow Event Automation"
+              >
+                <Workflow className="w-3.5 h-3.5 text-emerald-400" />
+                <span>Automate</span>
               </button>
             </>
           ) : userRole === 'marketing' ? (
